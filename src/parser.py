@@ -1,32 +1,30 @@
-"""Parse Pathogen Detection metadata TSVs into isolate records.
+"""Parse NCBI Pathogen Detection metadata TSV and join companion files.
 
-The NCBI metadata TSV has ~50 columns; we project down to what's needed for
-clustering/alerting. Column names have shifted over time (e.g. `epi_type`
-was once `serovar_epi_type`), so we look up by a list of candidate names and
-treat anything missing as null.
-
-Date parsing is permissive — NCBI accepts everything from "2024" to
-"2024-03-15T12:00:00Z". We coerce to a date-or-None.
+The parser materializes per-isolate Isolate records by:
+  1. Iterating the (large) metadata.tsv
+  2. Looking up PDS_acc from cluster_list (sidecar file)
+  3. Looking up min_same/min_diff from SNP_distances (sidecar file)
+  4. Looking up AMR genotypes from amr.metadata (sidecar file)
+  5. Inferring epi_type from host/isolation_source where missing
 """
 
 from __future__ import annotations
 
 import csv
 import logging
-from dataclasses import dataclass, field
+import re
+from dataclasses import dataclass
 from datetime import date, datetime
 from pathlib import Path
-from typing import Iterable
-
-from . import config
+from typing import Iterable, Iterator
 
 log = logging.getLogger(__name__)
 
-# Column name candidates, in priority order. First non-empty match wins.
+
+# Columns in the new metadata.tsv. We keep candidates because field names
+# still drift between releases.
 COL_CANDIDATES: dict[str, tuple[str, ...]] = {
     "pdt_acc": ("target_acc", "PDT_acc", "pdt_acc"),
-    "pds_acc": ("PDS_acc", "pds_acc", "PDS_acc_in_latest_PDG",
-                "SNP_cluster", "snp_cluster", "PDS_acc.1"),
     "epi_type": ("epi_type", "serovar_epi_type"),
     "host": ("host", "host_scientific_name"),
     "isolation_source": ("isolation_source", "source"),
@@ -34,9 +32,6 @@ COL_CANDIDATES: dict[str, tuple[str, ...]] = {
     "collection_date": ("collection_date", "collected_date"),
     "scientific_name": ("scientific_name", "organism", "Organism group"),
     "serovar": ("serovar", "serotype"),
-    "min_same": ("min_same", "min_same_PDS"),
-    "min_diff": ("min_diff", "min_diff_PDS"),
-    "amr_genotypes": ("AMR_genotypes", "amr_genotypes", "AMR_genotypes_core"),
     "biosample_acc": ("biosample_acc", "BioSample", "biosample"),
     "asm_acc": ("asm_acc", "assembly_acc"),
     "sra_acc": ("Run", "sra_acc", "Run_acc"),
@@ -45,8 +40,6 @@ COL_CANDIDATES: dict[str, tuple[str, ...]] = {
 
 @dataclass
 class Isolate:
-    """One row from the metadata TSV, projected to fields we use."""
-
     pdt_acc: str
     pds_acc: str | None
     epi_type: str | None
@@ -56,61 +49,45 @@ class Isolate:
     collection_date: date | None
     scientific_name: str | None
     serovar: str | None
-    min_same: int | None        # SNPs to nearest isolate in same PDS cluster
-    min_diff: int | None        # SNPs to nearest isolate in a different PDS cluster
+    min_same: int | None
+    min_diff: int | None
     amr_genotypes: str | None
     biosample_acc: str | None
     asm_acc: str | None
     sra_acc: str | None
-    pathogen: str = ""          # filled in by caller (Salmonella, STEC, etc.)
-
-    @property
-    def is_human(self) -> bool:
-        return (self.epi_type or "").strip().lower() in config.HUMAN_EPI_TYPES
-
-    @property
-    def is_nonhuman(self) -> bool:
-        et = (self.epi_type or "").strip().lower()
-        return bool(et) and et not in config.HUMAN_EPI_TYPES
+    pathogen: str
 
     @property
     def has_cluster(self) -> bool:
         return bool(self.pds_acc) and self.pds_acc.upper() != "NULL"
 
+    @property
+    def is_human(self) -> bool:
+        return (self.epi_type or "").lower() == "clinical"
+
+    @property
+    def is_nonhuman(self) -> bool:
+        return bool(self.epi_type) and not self.is_human
+
     def country(self) -> str | None:
-        """Extract country from 'USA: Maryland' style geo strings."""
         if not self.geo_loc_name:
             return None
-        return self.geo_loc_name.split(":")[0].strip() or None
+        m = re.match(r"^\s*([^:,]+)", self.geo_loc_name)
+        return m.group(1).strip() if m else None
 
 
-def _first_present(row: dict[str, str], names: tuple[str, ...]) -> str | None:
+def _first_present(row: dict, names: tuple[str, ...]) -> str | None:
     for n in names:
         v = row.get(n)
-        if v is not None and v != "" and v.upper() != "NULL":
-            return v
+        if v not in (None, "", "NULL"):
+            return v.strip() if isinstance(v, str) else v
     return None
 
 
-def _to_int(v: str | None) -> int | None:
-    if v is None:
+def _to_date(s: str | None) -> date | None:
+    if not s or s == "NULL":
         return None
-    try:
-        return int(float(v))
-    except (TypeError, ValueError):
-        return None
-
-
-def _to_date(v: str | None) -> date | None:
-    """Parse NCBI's many date formats; return None on failure."""
-    if not v:
-        return None
-    s = v.strip()
-    # Strip time portion if present
-    if "T" in s:
-        s = s.split("T", 1)[0]
-    # Try common formats from most-specific to least
-    for fmt in ("%Y-%m-%d", "%Y-%m", "%Y/%m/%d", "%Y"):
+    for fmt in ("%Y-%m-%d", "%Y-%m", "%Y", "%Y/%m/%d"):
         try:
             return datetime.strptime(s, fmt).date()
         except ValueError:
@@ -118,32 +95,47 @@ def _to_date(v: str | None) -> date | None:
     return None
 
 
-def parse_metadata(path: Path, pathogen: str) -> Iterable[Isolate]:
-    """Yield Isolate objects from a metadata TSV.
+def iter_isolates(
+    metadata_path: Path,
+    pathogen: str,
+    pds_map: dict[str, str],
+    snp_map: dict[str, tuple[int | None, int | None]],
+    amr_map: dict[str, str],
+) -> Iterator[Isolate]:
+    """Yield Isolate records, joining the sidecar maps."""
+    # Avoid circular import — joiner is small
+    from .joiner import infer_epi_type
 
-    Streaming is intentional — Salmonella metadata is ~600k rows and we don't
-    want to hold the whole thing in memory unless the caller decides to.
-    """
-    with open(path, newline="", encoding="utf-8", errors="replace") as f:
+    with open(metadata_path, encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f, delimiter="\t")
-        log.info("[%s] TSV columns: %s", pathogen, ", ".join((reader.fieldnames or [])[:50]))
+        log.info("[%s] TSV columns: %s", pathogen,
+                 ", ".join((reader.fieldnames or [])[:50]))
         for row in reader:
             pdt = _first_present(row, COL_CANDIDATES["pdt_acc"])
             if not pdt:
-                continue  # rows without a PDT_acc are unusable
+                continue
+
+            host = _first_present(row, COL_CANDIDATES["host"])
+            iso_src = _first_present(row, COL_CANDIDATES["isolation_source"])
+            epi = _first_present(row, COL_CANDIDATES["epi_type"])
+            if not epi:
+                epi = infer_epi_type(host, iso_src)
+
+            ms, md = snp_map.get(pdt, (None, None))
+
             yield Isolate(
                 pdt_acc=pdt,
-                pds_acc=_first_present(row, COL_CANDIDATES["pds_acc"]),
-                epi_type=_first_present(row, COL_CANDIDATES["epi_type"]),
-                host=_first_present(row, COL_CANDIDATES["host"]),
-                isolation_source=_first_present(row, COL_CANDIDATES["isolation_source"]),
+                pds_acc=pds_map.get(pdt),
+                epi_type=epi,
+                host=host,
+                isolation_source=iso_src,
                 geo_loc_name=_first_present(row, COL_CANDIDATES["geo_loc_name"]),
                 collection_date=_to_date(_first_present(row, COL_CANDIDATES["collection_date"])),
                 scientific_name=_first_present(row, COL_CANDIDATES["scientific_name"]),
                 serovar=_first_present(row, COL_CANDIDATES["serovar"]),
-                min_same=_to_int(_first_present(row, COL_CANDIDATES["min_same"])),
-                min_diff=_to_int(_first_present(row, COL_CANDIDATES["min_diff"])),
-                amr_genotypes=_first_present(row, COL_CANDIDATES["amr_genotypes"]),
+                min_same=ms,
+                min_diff=md,
+                amr_genotypes=amr_map.get(pdt),
                 biosample_acc=_first_present(row, COL_CANDIDATES["biosample_acc"]),
                 asm_acc=_first_present(row, COL_CANDIDATES["asm_acc"]),
                 sra_acc=_first_present(row, COL_CANDIDATES["sra_acc"]),
@@ -151,20 +143,32 @@ def parse_metadata(path: Path, pathogen: str) -> Iterable[Isolate]:
             )
 
 
-def parse_to_list(path: Path, pathogen: str, stec_only: bool = False) -> list[Isolate]:
-    """Materialize the iterator and optionally filter to STEC pathotype only.
+def parse_to_list(
+    metadata_path: Path,
+    pathogen: str,
+    pds_map: dict[str, str] | None = None,
+    snp_map: dict[str, tuple[int | None, int | None]] | None = None,
+    amr_map: dict[str, str] | None = None,
+    stec_only: bool = False,
+) -> list[Isolate]:
+    """Materialize isolates. For STEC, filter to stx-positive only."""
+    pds_map = pds_map or {}
+    snp_map = snp_map or {}
+    amr_map = amr_map or {}
 
-    For the Escherichia_coli_Shigella taxgroup, the user only wants STEC. We
-    filter on AMR/virulence gene hits for stx1/stx2 in the AMR_genotypes
-    column, which Pathogen Detection populates from AMRFinderPlus.
-    """
-    out: list[Isolate] = []
-    for iso in parse_metadata(path, pathogen):
-        if stec_only:
-            amr = (iso.amr_genotypes or "").lower()
-            # stx1A/stx1B/stx2A/stx2B variants all start with 'stx'
-            if "stx" not in amr:
-                continue
-        out.append(iso)
-    log.info("[%s] parsed %d isolates from %s", pathogen, len(out), path.name)
-    return out
+    isolates = list(iter_isolates(metadata_path, pathogen, pds_map, snp_map, amr_map))
+    log.info("[%s] parsed %d isolates from %s", pathogen, len(isolates), metadata_path.name)
+
+    if stec_only:
+        kept = [
+            i for i in isolates
+            if i.amr_genotypes and re.search(r"\bstx[12]?", i.amr_genotypes, re.IGNORECASE)
+        ]
+        log.info("[%s] filtered to %d stx-positive isolates", pathogen, len(kept))
+        isolates = kept
+
+    n_clustered = sum(1 for i in isolates if i.has_cluster)
+    n_human = sum(1 for i in isolates if i.is_human)
+    log.info("[%s] %d/%d isolates in clusters; %d are clinical",
+             pathogen, n_clustered, len(isolates), n_human)
+    return isolates

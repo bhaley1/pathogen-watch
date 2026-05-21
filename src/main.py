@@ -15,6 +15,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
+from .joiner import load_pds_map, load_snp_distances, load_amr
 from . import (
     config,
     fetcher,
@@ -63,8 +64,13 @@ def run(
         log.info("--- %s (release %s) ---", snap.pathogen, snap.pdg_release)
         pdg_releases[snap.pathogen] = snap.pdg_release
         stec_only = snap.pathogen == "STEC"
+        pds_map = load_pds_map(snap.clusters_path)
+        snp_map = load_snp_distances(snap.snp_distances_path)
+        amr_map = load_amr(snap.amr_path)
         isolates = ncbi_parser.parse_to_list(
-            snap.metadata_path, snap.pathogen, stec_only=stec_only
+            snap.metadata_path, snap.pathogen,
+            pds_map=pds_map, snp_map=snp_map, amr_map=amr_map,
+            stec_only=stec_only,
         )
         clusters = cluster_mod.group_by_cluster(isolates)
         all_clusters_by_p[snap.pathogen] = clusters

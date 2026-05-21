@@ -1,37 +1,23 @@
-"""Download the latest Pathogen Detection metadata snapshots.
+"""Download NCBI Pathogen Detection nightly snapshots.
 
-NCBI Pathogen Detection publishes nightly snapshots at:
-    https://ftp.ncbi.nlm.nih.gov/pathogen/Results/{taxgroup}/latest_snps/
+The release directory layout (as of NCBI's 2024+ reorganization):
 
-Inside each release directory we want two files per taxgroup:
-    Metadata/PDG{accession}.metadata.tsv     -> all isolate metadata
-    Clusters/PDG{accession}.reference_target.SNP_distances.tsv  -> SNP matrix info
-    Clusters/PDG{accession}.reference_target.cluster_list.tsv   -> PDS membership
+    Results/{taxgroup}/PDG{X.Y}/
+        Metadata/   PDG{X.Y}.metadata.tsv              (base isolate metadata)
+        Clusters/   PDG{X.Y}.reference_target.cluster_list.tsv     (PDT -> PDS)
+                    PDG{X.Y}.reference_target.SNP_distances.tsv    (min_same/min_diff)
+        AMR/        PDG{X.Y}.amr.metadata.tsv          (AMR/virulence genotypes)
 
-In practice the metadata TSV already carries:
-    PDT_acc, PDS_acc, target_acc, min_same, min_diff, epi_type, host,
-    isolation_source, geo_loc_name, collection_date, scientific_name,
-    serovar, AMR_genotypes, ...
-
-That single file is sufficient for our alerting needs — we don't need to
-download the full pairwise SNP matrix. We derive cluster membership and
-near-neighbor counts from min_same / min_diff and PDS_acc.
-
-The fetcher is resilient: it follows the `latest_snps` redirect, caches
-downloaded files by release accession (so re-runs the same day are free),
-and falls back to a previously-cached release if NCBI is unreachable.
+We fetch all four and the parser merges them by target_acc / PDT_acc.
 """
 
 from __future__ import annotations
 
-import gzip
 import logging
 import re
-import shutil
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from urllib.parse import urljoin
 
 import requests
 
@@ -39,150 +25,160 @@ from . import config
 
 log = logging.getLogger(__name__)
 
-# Pattern for PDG release accessions e.g. PDG000000002.5210
-PDG_RE = re.compile(r"PDG\d{9}\.\d+")
-
-# NCBI is occasionally slow; be patient but not infinite.
-REQUEST_TIMEOUT = 120
-REQUEST_RETRIES = 3
-RETRY_BACKOFF = 5  # seconds, exponential
+PDG_RE = re.compile(r"PDG\d+\.\d+")
 
 
 @dataclass
 class Snapshot:
-    """One taxgroup's downloaded metadata snapshot."""
-
-    pathogen: str           # user-facing name e.g. "Salmonella"
-    taxgroup: str           # NCBI directory name e.g. "Salmonella"
-    pdg_release: str        # e.g. "PDG000000002.5210"
-    metadata_path: Path     # local path to the .tsv file
-    fetched_at: float       # unix timestamp
-
-    @property
-    def is_fresh(self) -> bool:
-        """Considered fresh if downloaded in the last 18 hours."""
-        return (time.time() - self.fetched_at) < 18 * 3600
+    pathogen: str
+    taxgroup: str
+    pdg_release: str
+    metadata_path: Path
+    clusters_path: Path | None
+    snp_distances_path: Path | None
+    amr_path: Path | None
 
 
-def _http_get(url: str, stream: bool = False) -> requests.Response:
-    """GET with retry/backoff. Raises on final failure."""
-    last_exc: Exception | None = None
-    for attempt in range(REQUEST_RETRIES):
-        try:
-            resp = requests.get(url, timeout=REQUEST_TIMEOUT, stream=stream)
-            resp.raise_for_status()
-            return resp
-        except requests.RequestException as e:
-            last_exc = e
-            wait = RETRY_BACKOFF * (2 ** attempt)
-            log.warning("GET %s failed (%s); retrying in %ds", url, e, wait)
-            time.sleep(wait)
-    raise RuntimeError(f"GET {url} failed after {REQUEST_RETRIES} attempts: {last_exc}")
-
-
-def _resolve_latest_release(taxgroup: str) -> str:
-    """Discover the current PDG release for a taxgroup.
-
-    The `latest_snps/` path on NCBI redirects to the active release directory,
-    but the directory listing is easier to parse than chasing redirects. We
-    list the taxgroup root and pick the lexicographically largest PDG entry,
-    which is also the most recent because of the zero-padded accession scheme.
-    """
-    listing_url = f"{config.NCBI_BASE}/{taxgroup}/"
-    resp = _http_get(listing_url)
-    releases = sorted(set(PDG_RE.findall(resp.text)))
-    if not releases:
-        raise RuntimeError(f"No PDG releases found at {listing_url}")
-    latest = releases[-1]
-    log.info("[%s] latest release: %s", taxgroup, latest)
+def _latest_release(taxgroup: str) -> str | None:
+    url = f"{config.NCBI_BASE}/{taxgroup}/"
+    log.debug("Listing %s", url)
+    try:
+        r = requests.get(url, timeout=60)
+        r.raise_for_status()
+    except Exception as e:
+        log.error("[%s] failed to list releases: %s", taxgroup, e)
+        return None
+    matches = PDG_RE.findall(r.text)
+    if not matches:
+        log.error("[%s] no PDG releases found at %s", taxgroup, url)
+        return None
+    # Pick the lexically highest (release numbers monotonically increase)
+    latest = sorted(set(matches), key=lambda s: tuple(int(x) for x in s[3:].split('.')))[-1]
     return latest
 
 
-def _metadata_url(taxgroup: str, release: str) -> str:
-    """Build the canonical metadata TSV URL for a release."""
-    return (
-        f"{config.NCBI_BASE}/{taxgroup}/{release}/Metadata/"
-        f"{release}.metadata.tsv"
-    )
-
-
-def _download(url: str, dest: Path) -> Path:
-    """Stream-download a (possibly large) file to dest."""
+def _download(url: str, dest: Path, required: bool = True) -> Path | None:
+    """Stream-download a file. If required=False, missing files return None."""
     dest.parent.mkdir(parents=True, exist_ok=True)
-    tmp = dest.with_suffix(dest.suffix + ".part")
-    with _http_get(url, stream=True) as r, open(tmp, "wb") as f:
-        for chunk in r.iter_content(chunk_size=1 << 16):
-            if chunk:
-                f.write(chunk)
-    tmp.replace(dest)
-    return dest
-
-
-def _maybe_gunzip(path: Path) -> Path:
-    """If we accidentally downloaded a .gz, decompress in place."""
-    if path.suffix != ".gz":
-        return path
-    out = path.with_suffix("")
-    with gzip.open(path, "rb") as src, open(out, "wb") as dst:
-        shutil.copyfileobj(src, dst)
-    path.unlink()
-    return out
-
-
-def fetch_snapshot(pathogen: str, taxgroup: str, cache_dir: Path | None = None) -> Snapshot:
-    """Download (or reuse cached) latest metadata for one taxgroup.
-
-    Files are cached by release accession so re-runs the same day are free.
-    On NCBI failure, the most recent cached release is returned with a warning.
-    """
-    cache_dir = cache_dir or config.CACHE_DIR
-    cache_dir.mkdir(parents=True, exist_ok=True)
-    tax_cache = cache_dir / taxgroup
-    tax_cache.mkdir(exist_ok=True)
-
     try:
-        release = _resolve_latest_release(taxgroup)
+        with requests.get(url, stream=True, timeout=300) as r:
+            if r.status_code == 404:
+                if required:
+                    raise FileNotFoundError(url)
+                log.warning("Optional file 404: %s", url)
+                return None
+            r.raise_for_status()
+            with open(dest, "wb") as f:
+                for chunk in r.iter_content(chunk_size=1024 * 256):
+                    f.write(chunk)
+        return dest
     except Exception as e:
-        log.error("[%s] could not resolve latest release: %s", taxgroup, e)
-        # Try fallback to most recent cached release
-        cached = sorted(tax_cache.glob("PDG*.metadata.tsv"))
+        if required:
+            raise
+        log.warning("Optional file fetch failed (%s): %s", url, e)
+        return None
+
+
+def _fetch_one(pathogen: str, taxgroup: str) -> Snapshot | None:
+    release = _latest_release(taxgroup)
+    if not release:
+        # Try to fall back to cached release on disk
+        tax_cache = config.CACHE_DIR / taxgroup
+        cached = sorted(tax_cache.glob("PDG*.metadata.tsv")) if tax_cache.exists() else []
         if cached:
             fallback = cached[-1]
-            log.warning("[%s] falling back to cached %s", taxgroup, fallback.name)
+            log.warning("[%s] no remote release; falling back to cached %s",
+                        taxgroup, fallback.name)
             release = PDG_RE.match(fallback.name).group(0)
-            return Snapshot(
-                pathogen=pathogen, taxgroup=taxgroup,
-                pdg_release=release, metadata_path=fallback,
-                fetched_at=fallback.stat().st_mtime,
-            )
-        raise
+        else:
+            return None
 
-    local = tax_cache / f"{release}.metadata.tsv"
-    if local.exists() and local.stat().st_size > 0:
-        log.info("[%s] using cached %s", taxgroup, local.name)
+    log.info("[%s] latest release: %s", pathogen, release)
+    tax_cache = config.CACHE_DIR / taxgroup
+    base_url = f"{config.NCBI_BASE}/{taxgroup}/{release}"
+
+    # ---- Required: metadata.tsv ----
+    md_local = tax_cache / f"{release}.metadata.tsv"
+    if md_local.exists() and md_local.stat().st_size > 0:
+        log.info("[%s] using cached %s", pathogen, md_local.name)
     else:
-        url = _metadata_url(taxgroup, release)
-        log.info("[%s] downloading %s", taxgroup, url)
-        _download(url, local)
-        local = _maybe_gunzip(local)
+        url = f"{base_url}/Metadata/{release}.metadata.tsv"
+        log.info("[%s] downloading %s", pathogen, url)
+        _download(url, md_local, required=True)
+
+    # ---- Optional: cluster_list.tsv (PDT -> PDS) ----
+    # NCBI's actual filename may vary slightly; try the canonical name first,
+    # then a couple of alternates. Cache each successful fetch.
+    cl_local = tax_cache / f"{release}.cluster_list.tsv"
+    if not (cl_local.exists() and cl_local.stat().st_size > 0):
+        candidates = [
+            f"{base_url}/Clusters/{release}.reference_target.cluster_list.tsv",
+            f"{base_url}/Clusters/{release}.cluster_list.tsv",
+            f"{base_url}/Clusters/{release}.reference_target.clusters.tsv",
+        ]
+        for url in candidates:
+            log.info("[%s] trying cluster_list: %s", pathogen, url)
+            got = _download(url, cl_local, required=False)
+            if got and got.stat().st_size > 0:
+                log.info("[%s] cluster_list downloaded (%d bytes)", pathogen, got.stat().st_size)
+                break
+        else:
+            cl_local = None  # no cluster file available
+    else:
+        log.info("[%s] using cached cluster_list", pathogen)
+
+    # ---- Optional: SNP_distances.tsv (min_same / min_diff) ----
+    sd_local = tax_cache / f"{release}.SNP_distances.tsv"
+    if not (sd_local.exists() and sd_local.stat().st_size > 0):
+        candidates = [
+            f"{base_url}/Clusters/{release}.reference_target.SNP_distances.tsv",
+            f"{base_url}/Clusters/{release}.SNP_distances.tsv",
+        ]
+        for url in candidates:
+            log.info("[%s] trying SNP_distances: %s", pathogen, url)
+            got = _download(url, sd_local, required=False)
+            if got and got.stat().st_size > 0:
+                log.info("[%s] SNP_distances downloaded (%d bytes)", pathogen, got.stat().st_size)
+                break
+        else:
+            sd_local = None
+    else:
+        log.info("[%s] using cached SNP_distances", pathogen)
+
+    # ---- Optional: AMR metadata ----
+    amr_local = tax_cache / f"{release}.amr.metadata.tsv"
+    if not (amr_local.exists() and amr_local.stat().st_size > 0):
+        candidates = [
+            f"{base_url}/AMR/{release}.amr.metadata.tsv",
+            f"{base_url}/AMRFinderPlus/{release}.amr.metadata.tsv",
+        ]
+        for url in candidates:
+            log.info("[%s] trying AMR metadata: %s", pathogen, url)
+            got = _download(url, amr_local, required=False)
+            if got and got.stat().st_size > 0:
+                log.info("[%s] AMR metadata downloaded (%d bytes)", pathogen, got.stat().st_size)
+                break
+        else:
+            amr_local = None
+    else:
+        log.info("[%s] using cached AMR metadata", pathogen)
 
     return Snapshot(
-        pathogen=pathogen, taxgroup=taxgroup,
-        pdg_release=release, metadata_path=local,
-        fetched_at=time.time(),
+        pathogen=pathogen,
+        taxgroup=taxgroup,
+        pdg_release=release,
+        metadata_path=md_local,
+        clusters_path=cl_local,
+        snp_distances_path=sd_local,
+        amr_path=amr_local,
     )
 
 
 def fetch_all() -> list[Snapshot]:
-    """Fetch snapshots for every configured pathogen.
-
-    Errors on individual pathogens are logged but do not abort the run —
-    a partial digest beats no digest.
-    """
-    snaps: list[Snapshot] = []
+    out: list[Snapshot] = []
     for pathogen, taxgroup in config.PATHOGENS.items():
-        try:
-            snaps.append(fetch_snapshot(pathogen, taxgroup))
-        except Exception as e:
-            log.exception("[%s] fetch failed: %s", pathogen, e)
-    return snaps
+        snap = _fetch_one(pathogen, taxgroup)
+        if snap:
+            out.append(snap)
+        time.sleep(1)  # be polite to NCBI
+    return out
