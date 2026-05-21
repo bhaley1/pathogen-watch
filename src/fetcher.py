@@ -28,6 +28,23 @@ log = logging.getLogger(__name__)
 PDG_RE = re.compile(r"PDG\d+\.\d+")
 
 
+
+
+# Maximum age (hours) before we re-fetch a cached file. NCBI adds isolates to
+# metadata.tsv throughout the day under the same release accession.
+MAX_AGE_HOURS = 3
+
+
+def _is_fresh(path: Path) -> bool:
+    """True if path exists, is non-empty, and was modified within MAX_AGE_HOURS."""
+    if not (path.exists() and path.stat().st_size > 0):
+        return False
+    import time as _time
+    age_seconds = _time.time() - path.stat().st_mtime
+    return age_seconds < (MAX_AGE_HOURS * 3600)
+
+
+
 @dataclass
 class Snapshot:
     pathogen: str
@@ -133,6 +150,32 @@ def _fetch_one(pathogen: str, taxgroup: str) -> Snapshot | None:
         except Exception as e:
             log.warning("[Salmonella] probe failed: %s", e)
 
+
+    # PROBE for Salmonella: list its Clusters/ directory and log every file
+    # name so we can find where PDS cluster info now lives.
+    if pathogen == "Salmonella" and release:
+        try:
+            probe_url = f"{config.NCBI_BASE}/{taxgroup}/{release}/Clusters/"
+            log.info("[Salmonella] probing Clusters dir: %s", probe_url)
+            r = requests.get(probe_url, timeout=60)
+            if r.status_code == 200:
+                # Crude parse: pull every href that ends in .tsv
+                import re as _re
+                files = _re.findall(r'href="([^"]+\.tsv)"', r.text)
+                log.info("[Salmonella] files in Clusters/: %s", files or "(none)")
+            else:
+                log.warning("[Salmonella] Clusters dir status: %d", r.status_code)
+            # Also probe alternate directories
+            for alt in ["SNP_trees/", "Cluster_data/", "Trees/", ""]:
+                alt_url = f"{config.NCBI_BASE}/{taxgroup}/{release}/{alt}"
+                ar = requests.get(alt_url, timeout=60)
+                if ar.status_code == 200 and alt:
+                    files = _re.findall(r'href="([^"]+\.tsv)"', ar.text)
+                    if files:
+                        log.info("[Salmonella] found .tsv files in %s: %s", alt, files)
+        except Exception as e:
+            log.warning("[Salmonella] probe failed: %s", e)
+
     if not release:
         # Try to fall back to cached release on disk
         tax_cache = config.CACHE_DIR / taxgroup
@@ -151,9 +194,11 @@ def _fetch_one(pathogen: str, taxgroup: str) -> Snapshot | None:
 
     # ---- Required: metadata.tsv ----
     md_local = tax_cache / f"{release}.metadata.tsv"
-    if md_local.exists() and md_local.stat().st_size > 0:
-        log.info("[%s] using cached %s", pathogen, md_local.name)
+    if _is_fresh(md_local):
+        log.info("[%s] using cached %s (fresh)", pathogen, md_local.name)
     else:
+        if md_local.exists():
+            log.info("[%s] cached %s is stale; re-fetching", pathogen, md_local.name)
         url = f"{base_url}/Metadata/{release}.metadata.tsv"
         log.info("[%s] downloading %s", pathogen, url)
         _download(url, md_local, required=True)
@@ -162,7 +207,7 @@ def _fetch_one(pathogen: str, taxgroup: str) -> Snapshot | None:
     # NCBI's actual filename may vary slightly; try the canonical name first,
     # then a couple of alternates. Cache each successful fetch.
     cl_local = tax_cache / f"{release}.cluster_list.tsv"
-    if not (cl_local.exists() and cl_local.stat().st_size > 0):
+    if not _is_fresh(cl_local):
         candidates = [
             f"{base_url}/Clusters/{release}.reference_target.cluster_list.tsv",
             f"{base_url}/Clusters/{release}.cluster_list.tsv",
@@ -177,7 +222,7 @@ def _fetch_one(pathogen: str, taxgroup: str) -> Snapshot | None:
         else:
             cl_local = None  # no cluster file available
     else:
-        log.info("[%s] using cached cluster_list", pathogen)
+        log.info("[%s] using cached cluster_list (fresh)", pathogen)
 
     # ---- SNP_distances: NOT downloaded ----
     # NCBI's SNP_distances.tsv is a pairwise distance file (rows are pairs of
@@ -187,7 +232,7 @@ def _fetch_one(pathogen: str, taxgroup: str) -> Snapshot | None:
 
     # ---- Optional: AMR metadata ----
     amr_local = tax_cache / f"{release}.amr.metadata.tsv"
-    if not (amr_local.exists() and amr_local.stat().st_size > 0):
+    if not _is_fresh(amr_local):
         candidates = [
             f"{base_url}/AMR/{release}.amr.metadata.tsv",
             f"{base_url}/AMRFinderPlus/{release}.amr.metadata.tsv",
@@ -201,7 +246,7 @@ def _fetch_one(pathogen: str, taxgroup: str) -> Snapshot | None:
         else:
             amr_local = None
     else:
-        log.info("[%s] using cached AMR metadata", pathogen)
+        log.info("[%s] using cached AMR metadata (fresh)", pathogen)
 
     return Snapshot(
         pathogen=pathogen,
