@@ -127,23 +127,11 @@ def _fetch_one(pathogen: str, taxgroup: str) -> Snapshot | None:
     else:
         log.info("[%s] using cached cluster_list", pathogen)
 
-    # ---- Optional: SNP_distances.tsv (min_same / min_diff) ----
-    sd_local = tax_cache / f"{release}.SNP_distances.tsv"
-    if not (sd_local.exists() and sd_local.stat().st_size > 0):
-        candidates = [
-            f"{base_url}/Clusters/{release}.reference_target.SNP_distances.tsv",
-            f"{base_url}/Clusters/{release}.SNP_distances.tsv",
-        ]
-        for url in candidates:
-            log.info("[%s] trying SNP_distances: %s", pathogen, url)
-            got = _download(url, sd_local, required=False)
-            if got and got.stat().st_size > 0:
-                log.info("[%s] SNP_distances downloaded (%d bytes)", pathogen, got.stat().st_size)
-                break
-        else:
-            sd_local = None
-    else:
-        log.info("[%s] using cached SNP_distances", pathogen)
+    # ---- SNP_distances: NOT downloaded ----
+    # NCBI's SNP_distances.tsv is a pairwise distance file (rows are pairs of
+    # isolates) and can be 15+ GB. We do not need it: per-isolate min_same and
+    # min_diff are now inline in metadata.tsv as 'minsame'/'mindiff'.
+    sd_local = None
 
     # ---- Optional: AMR metadata ----
     amr_local = tax_cache / f"{release}.amr.metadata.tsv"

@@ -25,6 +25,7 @@ log = logging.getLogger(__name__)
 # still drift between releases.
 COL_CANDIDATES: dict[str, tuple[str, ...]] = {
     "pdt_acc": ("target_acc", "PDT_acc", "pdt_acc"),
+    "pds_acc": ("PDS_acc", "pds_acc", "computed_types"),  # rare inline cases
     "epi_type": ("epi_type", "serovar_epi_type"),
     "host": ("host", "host_scientific_name"),
     "isolation_source": ("isolation_source", "source"),
@@ -35,6 +36,10 @@ COL_CANDIDATES: dict[str, tuple[str, ...]] = {
     "biosample_acc": ("biosample_acc", "BioSample", "biosample"),
     "asm_acc": ("asm_acc", "assembly_acc"),
     "sra_acc": ("Run", "sra_acc", "Run_acc"),
+    # New as of NCBI's 2024 schema: per-isolate SNP distance fields are now
+    # inline in metadata.tsv (note: no underscore in the new names).
+    "min_same": ("minsame", "min_same", "min_same_PDS"),
+    "min_diff": ("mindiff", "min_diff", "min_diff_PDS"),
 }
 
 
@@ -95,6 +100,17 @@ def _to_date(s: str | None) -> date | None:
     return None
 
 
+
+
+def _to_int(v):
+    if v is None or v == "" or str(v).upper() == "NULL":
+        return None
+    try:
+        return int(v)
+    except (ValueError, TypeError):
+        return None
+
+
 def iter_isolates(
     metadata_path: Path,
     pathogen: str,
@@ -121,11 +137,21 @@ def iter_isolates(
             if not epi:
                 epi = infer_epi_type(host, iso_src)
 
-            ms, md = snp_map.get(pdt, (None, None))
+            # Prefer inline metadata values; fall back to snp_map (legacy sidecar)
+            ms_inline = _to_int(_first_present(row, COL_CANDIDATES["min_same"]))
+            md_inline = _to_int(_first_present(row, COL_CANDIDATES["min_diff"]))
+            ms_sidecar, md_sidecar = snp_map.get(pdt, (None, None))
+            ms = ms_inline if ms_inline is not None else ms_sidecar
+            md = md_inline if md_inline is not None else md_sidecar
+
+            # Same idea for pds_acc — prefer the sidecar map (cluster_list)
+            # but fall back to inline metadata if it appears as a column
+            inline_pds = _first_present(row, COL_CANDIDATES["pds_acc"])
+            pds_value = pds_map.get(pdt) or (inline_pds if (inline_pds and inline_pds.startswith("PDS")) else None)
 
             yield Isolate(
                 pdt_acc=pdt,
-                pds_acc=pds_map.get(pdt),
+                pds_acc=pds_value,
                 epi_type=epi,
                 host=host,
                 isolation_source=iso_src,
@@ -162,7 +188,7 @@ def parse_to_list(
     if stec_only:
         kept = [
             i for i in isolates
-            if i.amr_genotypes and re.search(r"\bstx[12]?", i.amr_genotypes, re.IGNORECASE)
+            if i.amr_genotypes and re.search(r"(stx[ab]?[12]?|shiga[_\s-]?toxin)", i.amr_genotypes, re.IGNORECASE)
         ]
         log.info("[%s] filtered to %d stx-positive isolates", pathogen, len(kept))
         isolates = kept
