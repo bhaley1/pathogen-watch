@@ -73,7 +73,7 @@ DIGEST_DIR = REPO_ROOT / "digests"
 @dataclass
 class EmailConfig:
     smtp_host: str = field(default_factory=lambda: os.environ.get("SMTP_HOST", ""))
-    smtp_port: int = field(default_factory=lambda: int(os.environ.get("SMTP_PORT", "587")))
+    smtp_port: int = field(default_factory=lambda: int(os.environ.get("SMTP_PORT") or "587"))
     smtp_user: str = field(default_factory=lambda: os.environ.get("SMTP_USER", ""))
     smtp_pass: str = field(default_factory=lambda: os.environ.get("SMTP_PASS", ""))
     from_addr: str = field(default_factory=lambda: os.environ.get("ALERT_FROM", ""))

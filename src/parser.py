@@ -25,7 +25,8 @@ log = logging.getLogger(__name__)
 # Column name candidates, in priority order. First non-empty match wins.
 COL_CANDIDATES: dict[str, tuple[str, ...]] = {
     "pdt_acc": ("target_acc", "PDT_acc", "pdt_acc"),
-    "pds_acc": ("PDS_acc", "pds_acc", "PDS_acc_in_latest_PDG"),
+    "pds_acc": ("PDS_acc", "pds_acc", "PDS_acc_in_latest_PDG",
+                "SNP_cluster", "snp_cluster", "PDS_acc.1"),
     "epi_type": ("epi_type", "serovar_epi_type"),
     "host": ("host", "host_scientific_name"),
     "isolation_source": ("isolation_source", "source"),
@@ -125,6 +126,7 @@ def parse_metadata(path: Path, pathogen: str) -> Iterable[Isolate]:
     """
     with open(path, newline="", encoding="utf-8", errors="replace") as f:
         reader = csv.DictReader(f, delimiter="\t")
+        log.info("[%s] TSV columns: %s", pathogen, ", ".join((reader.fieldnames or [])[:50]))
         for row in reader:
             pdt = _first_present(row, COL_CANDIDATES["pdt_acc"])
             if not pdt:
