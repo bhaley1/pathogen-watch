@@ -126,6 +126,21 @@ def iter_isolates(
         reader = csv.DictReader(f, delimiter="\t")
         log.info("[%s] TSV columns: %s", pathogen,
                  ", ".join((reader.fieldnames or [])[:50]))
+
+        # PROBE: dump first 5 non-empty computed_types values to see
+        # if NCBI stashed PDS_acc there. Remove after diagnosis.
+        if pathogen == "Salmonella":
+            _probe_count = 0
+            _probe_path = metadata_path
+            with open(_probe_path, encoding="utf-8") as _pf:
+                _probe_reader = csv.DictReader(_pf, delimiter="\t")
+                for _probe_row in _probe_reader:
+                    _ct = _probe_row.get("computed_types") or ""
+                    if _ct and _ct.upper() != "NULL":
+                        log.info("[Salmonella] computed_types sample: %s", _ct[:300])
+                        _probe_count += 1
+                        if _probe_count >= 5:
+                            break
         for row in reader:
             pdt = _first_present(row, COL_CANDIDATES["pdt_acc"])
             if not pdt:

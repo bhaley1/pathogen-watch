@@ -81,6 +81,32 @@ def _download(url: str, dest: Path, required: bool = True) -> Path | None:
 
 def _fetch_one(pathogen: str, taxgroup: str) -> Snapshot | None:
     release = _latest_release(taxgroup)
+
+    # PROBE for Salmonella: list its Clusters/ directory and log every file
+    # name so we can find where PDS cluster info now lives.
+    if pathogen == "Salmonella" and release:
+        try:
+            probe_url = f"{config.NCBI_BASE}/{taxgroup}/{release}/Clusters/"
+            log.info("[Salmonella] probing Clusters dir: %s", probe_url)
+            r = requests.get(probe_url, timeout=60)
+            if r.status_code == 200:
+                # Crude parse: pull every href that ends in .tsv
+                import re as _re
+                files = _re.findall(r'href="([^"]+\.tsv)"', r.text)
+                log.info("[Salmonella] files in Clusters/: %s", files or "(none)")
+            else:
+                log.warning("[Salmonella] Clusters dir status: %d", r.status_code)
+            # Also probe alternate directories
+            for alt in ["SNP_trees/", "Cluster_data/", "Trees/", ""]:
+                alt_url = f"{config.NCBI_BASE}/{taxgroup}/{release}/{alt}"
+                ar = requests.get(alt_url, timeout=60)
+                if ar.status_code == 200 and alt:
+                    files = _re.findall(r'href="([^"]+\.tsv)"', ar.text)
+                    if files:
+                        log.info("[Salmonella] found .tsv files in %s: %s", alt, files)
+        except Exception as e:
+            log.warning("[Salmonella] probe failed: %s", e)
+
     if not release:
         # Try to fall back to cached release on disk
         tax_cache = config.CACHE_DIR / taxgroup
