@@ -128,6 +128,34 @@ def iter_isolates(
         log.info("[%s] TSV columns: %s", pathogen,
                  ", ".join((reader.fieldnames or [])[:50]))
 
+        # PROBE v7: confirm whether minsame/mindiff are actually populated in
+        # NCBI's metadata or whether the columns exist but the values are empty.
+        _probe_v7_path = metadata_path
+        with open(_probe_v7_path, encoding="utf-8") as _p7f:
+            _p7_reader = csv.DictReader(_p7f, delimiter="\t")
+            _p7_found_ms = 0
+            _p7_found_md = 0
+            _p7_found_pds_inline = 0
+            _p7_total = 0
+            for _p7_row in _p7_reader:
+                _p7_total += 1
+                _ms = (_p7_row.get("minsame") or "").strip()
+                _md = (_p7_row.get("mindiff") or "").strip()
+                _pds_inline = (_p7_row.get("PDS_acc") or "").strip()
+                if _ms and _ms.upper() != "NULL" and _p7_found_ms < 3:
+                    log.info("[%s] PROBE minsame sample: %r", pathogen, _ms)
+                    _p7_found_ms += 1
+                if _md and _md.upper() != "NULL" and _p7_found_md < 3:
+                    log.info("[%s] PROBE mindiff sample: %r", pathogen, _md)
+                    _p7_found_md += 1
+                if _pds_inline and _pds_inline.upper() != "NULL" and _p7_found_pds_inline < 3:
+                    log.info("[%s] PROBE inline PDS_acc sample: %r", pathogen, _pds_inline)
+                    _p7_found_pds_inline += 1
+                if _p7_total >= 50000:
+                    break
+            log.info("[%s] PROBE summary: scanned %d rows; found ms=%d md=%d inline_pds=%d (non-empty samples)",
+                     pathogen, _p7_total, _p7_found_ms, _p7_found_md, _p7_found_pds_inline)
+
         # PROBE: dump first 5 non-empty computed_types values to see
         # if NCBI stashed PDS_acc there. Remove after diagnosis.
         if pathogen == "Salmonella":
