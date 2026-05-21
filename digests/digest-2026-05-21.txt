@@ -1,6 +1,6 @@
 NCBI Pathogen Detection — Daily Alert Digest
 Run date: 2026-05-21
-Total new events: 627
+Total new events: 0
 ========================================================================
 
 ### Salmonella
@@ -9,82 +9,7 @@ No new alert events.
 
 ### STEC
 ------------------------------------------------------------------------
-NEW EVENTS (627):
-  [New human cluster] New cluster PDS000035681.8 with 35 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000035681.8
-    New isolates: PDT000060827.3, PDT000060839.3, PDT000060845.3, PDT000060850.3, PDT000060863.3 (+30 more)
-  [New human cluster] New cluster PDS000000906.1 with 2 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000000906.1
-    New isolates: PDT000067779.1, PDT000067785.1
-  [New human cluster] New cluster PDS000034526.3 with 9 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000034526.3
-    New isolates: PDT000084293.3, PDT000084300.3, PDT000084301.3, PDT000094017.2, PDT000094019.2 (+4 more)
-  [New human cluster] New cluster PDS000013125.12 with 2 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000013125.12
-    New isolates: PDT000102772.3, PDT000468196.2
-  [New human cluster] New cluster PDS000005636.1 with 8 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000005636.1
-    New isolates: PDT000107783.1, PDT000107784.1, PDT000107916.1, PDT000107917.1, PDT000107918.1 (+3 more)
-  [New human cluster] New cluster PDS000006186.1 with 2 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000006186.1
-    New isolates: PDT000124638.1, PDT000124642.1
-  [New human cluster] New cluster PDS000056799.3 with 113 human case(s) and 11 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000056799.3
-    New isolates: PDT000127818.3, PDT000127819.3, PDT000127820.3, PDT000127821.3, PDT000127822.3 (+119 more)
-  [New human cluster] New cluster PDS000034109.3 with 2 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000034109.3
-    New isolates: PDT000135730.3, PDT000213927.3
-  [New human cluster] New cluster PDS000057130.2 with 3 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000057130.2
-    New isolates: PDT000155936.3, PDT000157742.3, PDT000158025.3
-  [New human cluster] New cluster PDS000016037.10 with 6 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000016037.10
-    New isolates: PDT000157737.3, PDT000242128.3, PDT000242167.3, PDT000245471.3, PDT000322061.2 (+1 more)
-  [New human cluster] New cluster PDS000084215.2 with 2 human case(s) and 1 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000084215.2
-    New isolates: PDT000161670.3, PDT001001004.1, PDT002977639.1
-  [New human cluster] New cluster PDS000009603.14 with 12 human case(s) and 2 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000009603.14
-    New isolates: PDT000844285.1, PDT000844342.1, PDT000844375.1, PDT000878495.1, PDT001041476.1 (+9 more)
-  [New human cluster] New cluster PDS000009661.7 with 2 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000009661.7
-    New isolates: PDT000171426.1, PDT000171436.1
-  [New human cluster] New cluster PDS000009662.10 with 4 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000009662.10
-    New isolates: PDT000171429.1, PDT000970114.1, PDT001041316.1, PDT001188576.1
-  [New human cluster] New cluster PDS000034899.3 with 3 human case(s) and 1 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000034899.3
-    New isolates: PDT000181789.2, PDT000181811.2, PDT000181812.2, PDT001369957.1
-  [New human cluster] New cluster PDS000221997.1 with 2 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000221997.1
-    New isolates: PDT000191161.1, PDT002668244.1
-  [New human cluster] New cluster PDS000076745.3 with 5 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000076745.3
-    New isolates: PDT000208669.1, PDT000903049.1, PDT000903050.1, PDT001455071.1, PDT001464930.1
-  [New human cluster] New cluster PDS000014078.1 with 2 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000014078.1
-    New isolates: PDT000219012.1, PDT000219013.1
-  [New human cluster] New cluster PDS000048870.2 with 3 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000048870.2
-    New isolates: PDT000225234.1, PDT000555606.1, PDT000555607.1
-  [New human cluster] New cluster PDS000048876.2 with 2 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000048876.2
-    New isolates: PDT000225236.1, PDT000555602.1
-  [New human cluster] New cluster PDS000048877.1 with 2 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000048877.1
-    New isolates: PDT000225237.1, PDT000555605.1
-  [New human cluster] New cluster PDS000015468.3 with 4 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000015468.3
-    New isolates: PDT000233276.2, PDT000233279.1, PDT003050235.1, PDT003050237.1
-  [New human cluster] New cluster PDS000015471.4 with 3 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000015471.4
-    New isolates: PDT000233278.3, PDT000233338.1, PDT001294417.1
-  [New human cluster] New cluster PDS000108708.1 with 2 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000108708.1
-    New isolates: PDT000233299.2, PDT001294418.1
-  [New human cluster] New cluster PDS000057491.2 with 3 human case(s) and 0 nonhuman isolate(s)
-    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000057491.2
-    New isolates: PDT000239087.3, PDT000241689.3, PDT000242338.3
+No new alert events.
 
 ### Listeria
 ------------------------------------------------------------------------
