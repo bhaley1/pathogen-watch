@@ -41,7 +41,7 @@
 <section>
   <div class="section-head">
     <h2>New alert events</h2>
-    <span class="count">last {{ recent_days }} days · <span id="visible-count">{{ recent_events|length }}</span> rows</span>
+    <span class="count">last {{ recent_days }} days · <span id="visible-count">{% if recent_events %}{{ recent_events|length }}{% else %}0{% endif %}</span> {% if recent_events|length == 1 %}row{% else %}rows{% endif %}</span>
   </div>
 
   {% if recent_events %}

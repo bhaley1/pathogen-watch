@@ -26,6 +26,7 @@ def mk(pdt, pds, epi="clinical", min_same=5, min_diff=200, coll=None, source=Non
         pdt_acc=pdt, pds_acc=pds, epi_type=epi, host=None,
         isolation_source=source, geo_loc_name="USA: Maryland",
         collection_date=coll or date.today(),
+        collection_date_raw=None,
         scientific_name="Salmonella enterica", serovar="Typhimurium",
         min_same=min_same, min_diff=min_diff, amr_genotypes=None,
         biosample_acc=None, asm_acc=None, sra_acc=None, pathogen=pathogen,

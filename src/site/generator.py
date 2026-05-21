@@ -136,7 +136,7 @@ def _prepare_mixed_clusters(
                 "tightest_gap": tg,
                 "tightest_gap_sort": tg if tg is not None else 99999,
                 "latest_iso": c.latest_collection.isoformat() if c.latest_collection else "",
-                "latest_short": c.latest_collection.isoformat() if c.latest_collection else "—",
+                "latest_short": _best_date_string(c),
                 "sources": ", ".join(sources_list[:3]) + (
                     f" (+{len(sources_list)-3})" if len(sources_list) > 3 else ""
                 ) if sources_list else "—",
@@ -432,6 +432,30 @@ def edition_no(today: date) -> int:
 # ---------------------------------------------------------------------------
 # Main render
 # ---------------------------------------------------------------------------
+
+
+
+def _best_date_string(c) -> str:
+    """Pick the most precise date string we can honestly display for a cluster.
+
+    Prefers the raw NCBI string of the isolate with the latest parsed date,
+    so 'YYYY-MM' stays as 'YYYY-MM' instead of being normalized to 'YYYY-MM-01'.
+    Falls back to the parsed ISO date if no raw string is available.
+    """
+    if not c.isolates:
+        return "—"
+    # Find the isolate whose parsed date == cluster.latest_collection
+    target = c.latest_collection
+    if target is None:
+        return "—"
+    for iso in c.isolates:
+        if iso.collection_date == target:
+            raw = getattr(iso, "collection_date_raw", None)
+            if raw:
+                return raw.strip()[:10]  # cap at YYYY-MM-DD length
+            return target.isoformat()
+    return target.isoformat()
+
 
 def render_site(
     run_date: date,

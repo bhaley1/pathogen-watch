@@ -52,6 +52,7 @@ class Isolate:
     isolation_source: str | None
     geo_loc_name: str | None
     collection_date: date | None
+    collection_date_raw: str | None
     scientific_name: str | None
     serovar: str | None
     min_same: int | None
@@ -141,6 +142,21 @@ def iter_isolates(
                         _probe_count += 1
                         if _probe_count >= 5:
                             break
+
+        # PROBE: dump first 5 non-empty computed_types values to see
+        # if NCBI stashed PDS_acc there. Remove after diagnosis.
+        if pathogen == "Salmonella":
+            _probe_count = 0
+            _probe_path = metadata_path
+            with open(_probe_path, encoding="utf-8") as _pf:
+                _probe_reader = csv.DictReader(_pf, delimiter="\t")
+                for _probe_row in _probe_reader:
+                    _ct = _probe_row.get("computed_types") or ""
+                    if _ct and _ct.upper() != "NULL":
+                        log.info("[Salmonella] computed_types sample: %s", _ct[:300])
+                        _probe_count += 1
+                        if _probe_count >= 5:
+                            break
         for row in reader:
             pdt = _first_present(row, COL_CANDIDATES["pdt_acc"])
             if not pdt:
@@ -172,6 +188,7 @@ def iter_isolates(
                 isolation_source=iso_src,
                 geo_loc_name=_first_present(row, COL_CANDIDATES["geo_loc_name"]),
                 collection_date=_to_date(_first_present(row, COL_CANDIDATES["collection_date"])),
+                collection_date_raw=_first_present(row, COL_CANDIDATES["collection_date"]),
                 scientific_name=_first_present(row, COL_CANDIDATES["scientific_name"]),
                 serovar=_first_present(row, COL_CANDIDATES["serovar"]),
                 min_same=ms,
@@ -210,6 +227,8 @@ def parse_to_list(
 
     n_clustered = sum(1 for i in isolates if i.has_cluster)
     n_human = sum(1 for i in isolates if i.is_human)
-    log.info("[%s] %d/%d isolates in clusters; %d are clinical",
-             pathogen, n_clustered, len(isolates), n_human)
+    n_minsame = sum(1 for i in isolates if i.min_same is not None)
+    n_mindiff = sum(1 for i in isolates if i.min_diff is not None)
+    log.info("[%s] %d/%d isolates in clusters; %d clinical; %d have minsame; %d have mindiff",
+             pathogen, n_clustered, len(isolates), n_human, n_minsame, n_mindiff)
     return isolates
