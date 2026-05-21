@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-05-21",
+  "count": 5,
+  "clusters": [
+    {
+      "pathogen": "Salmonella",
+      "pds_acc": "PDS000123456.7",
+      "n_human": 3,
+      "n_nonhuman": 2,
+      "tightest_human_min_same": 3,
+      "latest_collection": "2026-05-19",
+      "countries": "USA",
+      "nonhuman_sources": "bovine - milk, poultry - broiler",
+      "ncbi_url": "https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000123456.7",
+      "site_url": "https://bhaley1.github.io/pathogen-watch/clusters/salmonella-pds000123456-7.html"
+    },
+    {
+      "pathogen": "Salmonella",
+      "pds_acc": "PDS000222001.3",
+      "n_human": 2,
+      "n_nonhuman": 1,
+      "tightest_human_min_same": 5,
+      "latest_collection": "2026-05-18",
+      "countries": "USA",
+      "nonhuman_sources": "lettuce",
+      "ncbi_url": "https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000222001.3",
+      "site_url": "https://bhaley1.github.io/pathogen-watch/clusters/salmonella-pds000222001-3.html"
+    },
+    {
+      "pathogen": "STEC",
+      "pds_acc": "PDS_E_001.1",
+      "n_human": 2,
+      "n_nonhuman": 1,
+      "tightest_human_min_same": 2,
+      "latest_collection": "2026-05-18",
+      "countries": "USA",
+      "nonhuman_sources": "ground beef",
+      "ncbi_url": "https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS_E_001.1",
+      "site_url": "https://bhaley1.github.io/pathogen-watch/clusters/stec-pds-e-001-1.html"
+    },
+    {
+      "pathogen": "Listeria",
+      "pds_acc": "PDS_L_001.1",
+      "n_human": 2,
+      "n_nonhuman": 2,
+      "tightest_human_min_same": 1,
+      "latest_collection": "2026-05-17",
+      "countries": "USA",
+      "nonhuman_sources": "cheese - soft, deli meat - turkey",
+      "ncbi_url": "https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS_L_001.1",
+      "site_url": "https://bhaley1.github.io/pathogen-watch/clusters/listeria-pds-l-001-1.html"
+    },
+    {
+      "pathogen": "Campylobacter",
+      "pds_acc": "PDS_C_001.1",
+      "n_human": 1,
+      "n_nonhuman": 1,
+      "tightest_human_min_same": 6,
+      "latest_collection": "2026-05-13",
+      "countries": "USA",
+      "nonhuman_sources": "chicken - retail",
+      "ncbi_url": "https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS_C_001.1",
+      "site_url": "https://bhaley1.github.io/pathogen-watch/clusters/campylobacter-pds-c-001-1.html"
+    }
+  ]
+}

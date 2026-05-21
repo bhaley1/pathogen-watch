@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pathogen Watch — daily alerts</title>
+    <link>https://bhaley1.github.io/pathogen-watch/</link>
+    <atom:link href="https://bhaley1.github.io/pathogen-watch/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Open-access daily surveillance of human–animal–environmental genomic clusters of Salmonella, STEC, Listeria, and Campylobacter.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 May 2026 10:40:55 -0000</lastBuildDate>
+
+    <item>
+      <title><![CDATA[[Salmonella] Nonhuman added: PDS000123456.7]]></title>
+      <link>https://bhaley1.github.io/pathogen-watch/clusters/salmonella-pds000123456-7.html</link>
+      <guid isPermaLink="false">2026-05-21-salmonella-pds000123456-7-new_nonhuman_near_human</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 -0000</pubDate>
+      <category>Salmonella</category>
+      <description><![CDATA[Cluster PDS000123456.7 (with 3 human case(s)) gained 1 new nonhuman isolate(s). 3 human / 2 nonhuman isolate(s).]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Salmonella] New cluster: PDS000222001.3]]></title>
+      <link>https://bhaley1.github.io/pathogen-watch/clusters/salmonella-pds000222001-3.html</link>
+      <guid isPermaLink="false">2026-05-21-salmonella-pds000222001-3-new_human_cluster</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 -0000</pubDate>
+      <category>Salmonella</category>
+      <description><![CDATA[New cluster PDS000222001.3 with 2 human case(s) and 1 nonhuman isolate(s). 2 human / 1 nonhuman isolate(s).]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[STEC] Human added: PDS_E_001.1]]></title>
+      <link>https://bhaley1.github.io/pathogen-watch/clusters/stec-pds-e-001-1.html</link>
+      <guid isPermaLink="false">2026-05-21-stec-pds-e-001-1-new_human_in_cluster</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 -0000</pubDate>
+      <category>STEC</category>
+      <description><![CDATA[Cluster PDS_E_001.1 gained 1 new human case(s) (now 2 total). 2 human / 1 nonhuman isolate(s).]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Salmonella] Nonhuman added: PDS000123456.7]]></title>
+      <link>https://bhaley1.github.io/pathogen-watch/clusters/salmonella-pds000123456-7.html</link>
+      <guid isPermaLink="false">2026-05-21-salmonella-pds000123456-7-new_nonhuman_near_human</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 -0000</pubDate>
+      <category>Salmonella</category>
+      <description><![CDATA[Cluster PDS000123456.7 (with 3 human case(s)) gained 1 new nonhuman isolate(s). 3 human / 2 nonhuman isolate(s).]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[Salmonella] New cluster: PDS000222001.3]]></title>
+      <link>https://bhaley1.github.io/pathogen-watch/clusters/salmonella-pds000222001-3.html</link>
+      <guid isPermaLink="false">2026-05-21-salmonella-pds000222001-3-new_human_cluster</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 -0000</pubDate>
+      <category>Salmonella</category>
+      <description><![CDATA[New cluster PDS000222001.3 with 2 human case(s) and 1 nonhuman isolate(s). 2 human / 1 nonhuman isolate(s).]]></description>
+    </item>
+    <item>
+      <title><![CDATA[[STEC] Human added: PDS_E_001.1]]></title>
+      <link>https://bhaley1.github.io/pathogen-watch/clusters/stec-pds-e-001-1.html</link>
+      <guid isPermaLink="false">2026-05-21-stec-pds-e-001-1-new_human_in_cluster</guid>
+      <pubDate>Thu, 21 May 2026 00:00:00 -0000</pubDate>
+      <category>STEC</category>
+      <description><![CDATA[Cluster PDS_E_001.1 gained 1 new human case(s) (now 2 total). 2 human / 1 nonhuman isolate(s).]]></description>
+    </item>
+  </channel>
+</rss>

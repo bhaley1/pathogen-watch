@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% set nav_page = "timeline" %}
+{% block title %}Timeline · {{ site.title }}{% endblock %}
+
+{% block content %}
+
+<p class="lede">
+  Every alert event detected by Pathogen Watch since
+  <strong>{{ first_date_long }}</strong>, grouped by detection day. Each event
+  links to the cluster page where it can be discussed and tracked.
+</p>
+
+<section>
+  <div class="section-head">
+    <h2>Recent alerts</h2>
+    <span class="count">{{ total_events }} events · last {{ timeline_days }} days</span>
+  </div>
+
+  {% if days %}
+    {% for day in days %}
+    <div class="timeline-day">
+      <div class="timeline-date">
+        {{ day.date_long }}
+        <span class="count">{{ day.events|length }} event{% if day.events|length != 1 %}s{% endif %}</span>
+      </div>
+      {% for ev in day.events %}
+      <div class="timeline-event">
+        <div class="timeline-event-type">
+          <span class="badge badge-pathogen-{{ ev.pathogen|lower }}">{{ ev.pathogen }}</span>
+          <span class="badge {{ ev.badge_class }}">{{ ev.label }}</span>
+        </div>
+        <div>
+          <a href="{{ rel_root }}clusters/{{ ev.cluster_slug }}.html"
+             style="font-family: var(--mono); color: var(--teal-deep); text-decoration: none;">
+             {{ ev.pds_acc }}
+          </a>
+          &nbsp; {{ ev.summary }}
+        </div>
+        <div class="timeline-event-meta">
+          {{ ev.n_human }} human / {{ ev.n_nonhuman }} nonhuman
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  {% else %}
+    <div class="empty">No alert events tracked yet.</div>
+  {% endif %}
+</section>
+
+{% endblock %}

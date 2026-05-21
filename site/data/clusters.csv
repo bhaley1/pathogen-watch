@@ -1,0 +1,6 @@
+pathogen,pds_acc,n_human,n_nonhuman,tightest_human_min_same,latest_collection,countries,nonhuman_sources,ncbi_url,site_url
+Salmonella,PDS000123456.7,3,2,3,2026-05-19,USA,"bovine - milk, poultry - broiler",https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000123456.7,https://bhaley1.github.io/pathogen-watch/clusters/salmonella-pds000123456-7.html
+Salmonella,PDS000222001.3,2,1,5,2026-05-18,USA,lettuce,https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000222001.3,https://bhaley1.github.io/pathogen-watch/clusters/salmonella-pds000222001-3.html
+STEC,PDS_E_001.1,2,1,2,2026-05-18,USA,ground beef,https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS_E_001.1,https://bhaley1.github.io/pathogen-watch/clusters/stec-pds-e-001-1.html
+Listeria,PDS_L_001.1,2,2,1,2026-05-17,USA,"cheese - soft, deli meat - turkey",https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS_L_001.1,https://bhaley1.github.io/pathogen-watch/clusters/listeria-pds-l-001-1.html
+Campylobacter,PDS_C_001.1,1,1,6,2026-05-13,USA,chicken - retail,https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS_C_001.1,https://bhaley1.github.io/pathogen-watch/clusters/campylobacter-pds-c-001-1.html

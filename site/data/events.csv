@@ -1,0 +1,4 @@
+detected_date,pathogen,event_type,pds_acc,summary,new_pdt_accs,n_human,n_nonhuman
+2026-05-21,Salmonella,new_nonhuman_near_human,PDS000123456.7,Cluster PDS000123456.7 (with 3 human case(s)) gained 1 new nonhuman isolate(s),PDT0004.1,3,2
+2026-05-21,Salmonella,new_human_cluster,PDS000222001.3,New cluster PDS000222001.3 with 2 human case(s) and 1 nonhuman isolate(s),PDT0010.1|PDT0011.1|PDT0012.1,2,1
+2026-05-21,STEC,new_human_in_cluster,PDS_E_001.1,Cluster PDS_E_001.1 gained 1 new human case(s) (now 2 total),PDT_E_002.1,2,1

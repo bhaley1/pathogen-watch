@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pathogen Watch — Daily SNP-cluster surveillance</title>
+  <meta name="description" content="Open-access daily surveillance of human–animal–environmental genomic clusters of Salmonella, STEC, Listeria, and Campylobacter.">
+  <meta name="author" content="Bradd Haley, PhD">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pathogen Watch">
+  <meta property="og:description" content="Open-access daily surveillance of human–animal–environmental genomic clusters of Salmonella, STEC, Listeria, and Campylobacter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bhaley1.github.io/pathogen-watch/">
+
+  <link rel="alternate" type="application/rss+xml" title="Pathogen Watch — daily alerts" href="feed.xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <a class="brand" href="index.html">
+      Pathogen Watch
+      <span class="brand-sub">a daily surveillance digest</span>
+    </a>
+    <div class="masthead-meta">
+      <div>Updated <strong>May 21, 2026</strong></div>
+      <div>Edition № 21</div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="active">Dashboard</a>
+    <a href="timeline.html" class="">Timeline</a>
+    <a href="methods.html" class="">Methods</a>
+    <a href="data.html" class="">Data &amp; API</a>
+    <a href="about.html" class="">About</a>
+    <div class="nav-spacer"></div>
+    <span class="nav-extra">PDG&nbsp;PDG000000002.5210</span>
+  </div>
+</nav>
+
+<main class="container">
+
+<p class="lede">
+  Every morning, <strong>Pathogen Watch</strong> reads the latest NCBI Pathogen
+  Detection snapshot and surfaces SNP-based clusters that mix
+  <strong>human clinical cases</strong> with isolates from food, animals, or the
+  environment. New clusters and new additions to existing clusters are tracked
+  day-over-day; nonhuman isolates within tight SNP distance of others are
+  flagged as early-warning candidates.
+</p>
+
+<section>
+  <div class="tiles">
+    <div class="tile">
+      <div class="tile-label">New events today</div>
+      <div class="tile-value alert">3</div>
+      <div class="tile-delta">across 4 pathogens</div>
+    </div>
+    <div class="tile">
+      <div class="tile-label">Active mixed clusters</div>
+      <div class="tile-value">5</div>
+      <div class="tile-delta">human + nonhuman, last 90 days</div>
+    </div>
+    <div class="tile">
+      <div class="tile-label">Human-containing clusters</div>
+      <div class="tile-value">5</div>
+      <div class="tile-delta">≥1 clinical isolate</div>
+    </div>
+    <div class="tile">
+      <div class="tile-label">Tight cross-cluster nonhumans</div>
+      <div class="tile-value">1</div>
+      <div class="tile-delta">≤5 SNPs to a different PDS</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>New alert events</h2>
+    <span class="count">last 14 days · <span id="visible-count">3</span> rows</span>
+  </div>
+
+  <div class="filterbar">
+    <span class="filterbar-label">Pathogen</span>
+      <button class="chip active" data-pathogen-toggle="Salmonella">Salmonella<span class="chip-count">2</span></button>
+      <button class="chip active" data-pathogen-toggle="STEC">STEC<span class="chip-count">1</span></button>
+      <button class="chip active" data-pathogen-toggle="Listeria">Listeria<span class="chip-count">0</span></button>
+      <button class="chip active" data-pathogen-toggle="Campylobacter">Campylobacter<span class="chip-count">0</span></button>
+    <button class="chip" data-pathogen-all>All</button>
+    <button class="chip" data-pathogen-none>None</button>
+    <input type="search" id="search-input" class="search" placeholder="Search cluster ID, source, country…">
+  </div>
+
+  <table class="data">
+    <thead>
+      <tr>
+        <th class="sortable" data-sort-dir="desc">Date</th>
+        <th>Pathogen</th>
+        <th>Event</th>
+        <th>Cluster</th>
+        <th>Summary</th>
+        <th class="num sortable">Humans</th>
+        <th class="num sortable">Nonhuman</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-pathogen="Salmonella" data-search="pds000123456.7 salmonella nonhuman added cluster pds000123456.7 (with 3 human case(s)) gained 1 new nonhuman isolate(s) pdt0004.1 usa bovine - milk poultry - broiler">
+        <td class="mono" data-sort="2026-05-21">May 21</td>
+        <td><span class="badge badge-pathogen-salmonella">Salmonella</span></td>
+        <td><span class="badge badge-event-mixed">Nonhuman added</span></td>
+        <td class="mono"><a href="clusters/salmonella-pds000123456-7.html">PDS000123456.7</a></td>
+        <td class="truncate" title="Cluster PDS000123456.7 (with 3 human case(s)) gained 1 new nonhuman isolate(s)">Cluster PDS000123456.7 (with 3 human case(s)) gained 1 new nonhuman isolate(s)</td>
+        <td class="num" data-sort="3">3</td>
+        <td class="num" data-sort="2">2</td>
+      </tr>
+      <tr data-pathogen="Salmonella" data-search="pds000222001.3 salmonella new cluster new cluster pds000222001.3 with 2 human case(s) and 1 nonhuman isolate(s) pdt0010.1 pdt0011.1 pdt0012.1 usa lettuce">
+        <td class="mono" data-sort="2026-05-21">May 21</td>
+        <td><span class="badge badge-pathogen-salmonella">Salmonella</span></td>
+        <td><span class="badge badge-event-new">New cluster</span></td>
+        <td class="mono"><a href="clusters/salmonella-pds000222001-3.html">PDS000222001.3</a></td>
+        <td class="truncate" title="New cluster PDS000222001.3 with 2 human case(s) and 1 nonhuman isolate(s)">New cluster PDS000222001.3 with 2 human case(s) and 1 nonhuman isolate(s)</td>
+        <td class="num" data-sort="2">2</td>
+        <td class="num" data-sort="1">1</td>
+      </tr>
+      <tr data-pathogen="STEC" data-search="pds_e_001.1 stec human added cluster pds_e_001.1 gained 1 new human case(s) (now 2 total) pdt_e_002.1 usa ground beef">
+        <td class="mono" data-sort="2026-05-21">May 21</td>
+        <td><span class="badge badge-pathogen-stec">STEC</span></td>
+        <td><span class="badge badge-event-grow">Human added</span></td>
+        <td class="mono"><a href="clusters/stec-pds-e-001-1.html">PDS_E_001.1</a></td>
+        <td class="truncate" title="Cluster PDS_E_001.1 gained 1 new human case(s) (now 2 total)">Cluster PDS_E_001.1 gained 1 new human case(s) (now 2 total)</td>
+        <td class="num" data-sort="2">2</td>
+        <td class="num" data-sort="1">1</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Active mixed clusters</h2>
+    <span class="count">human + nonhuman · last 90 days</span>
+  </div>
+
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Pathogen</th>
+        <th>Cluster</th>
+        <th class="num sortable">Hu</th>
+        <th class="num sortable">Non-Hu</th>
+        <th class="num sortable" data-sort-dir="asc">Tightest gap</th>
+        <th class="sortable">Latest</th>
+        <th>Nonhuman sources</th>
+        <th>Geography</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-pathogen="Salmonella" data-search="pds000123456.7 salmonella bovine - milk poultry - broiler usa">
+        <td><span class="badge badge-pathogen-salmonella">Salmonella</span></td>
+        <td class="mono"><a href="clusters/salmonella-pds000123456-7.html">PDS000123456.7</a></td>
+        <td class="num" data-sort="3">3</td>
+        <td class="num" data-sort="2">2</td>
+        <td class="num" data-sort="3">
+<span class="badge badge-snp">≤3</span>        </td>
+        <td class="mono" data-sort="2026-05-19">2026-05-19</td>
+        <td class="truncate" title="bovine - milk, poultry - broiler">bovine - milk, poultry - broiler</td>
+        <td>USA</td>
+      </tr>
+      <tr data-pathogen="Salmonella" data-search="pds000222001.3 salmonella lettuce usa">
+        <td><span class="badge badge-pathogen-salmonella">Salmonella</span></td>
+        <td class="mono"><a href="clusters/salmonella-pds000222001-3.html">PDS000222001.3</a></td>
+        <td class="num" data-sort="2">2</td>
+        <td class="num" data-sort="1">1</td>
+        <td class="num" data-sort="5">
+<span class="badge badge-snp">≤5</span>        </td>
+        <td class="mono" data-sort="2026-05-18">2026-05-18</td>
+        <td class="truncate" title="lettuce">lettuce</td>
+        <td>USA</td>
+      </tr>
+      <tr data-pathogen="STEC" data-search="pds_e_001.1 stec ground beef usa">
+        <td><span class="badge badge-pathogen-stec">STEC</span></td>
+        <td class="mono"><a href="clusters/stec-pds-e-001-1.html">PDS_E_001.1</a></td>
+        <td class="num" data-sort="2">2</td>
+        <td class="num" data-sort="1">1</td>
+        <td class="num" data-sort="2">
+<span class="badge badge-snp">≤2</span>        </td>
+        <td class="mono" data-sort="2026-05-18">2026-05-18</td>
+        <td class="truncate" title="ground beef">ground beef</td>
+        <td>USA</td>
+      </tr>
+      <tr data-pathogen="Listeria" data-search="pds_l_001.1 listeria cheese - soft deli meat - turkey usa">
+        <td><span class="badge badge-pathogen-listeria">Listeria</span></td>
+        <td class="mono"><a href="clusters/listeria-pds-l-001-1.html">PDS_L_001.1</a></td>
+        <td class="num" data-sort="2">2</td>
+        <td class="num" data-sort="2">2</td>
+        <td class="num" data-sort="1">
+<span class="badge badge-snp">≤1</span>        </td>
+        <td class="mono" data-sort="2026-05-17">2026-05-17</td>
+        <td class="truncate" title="cheese - soft, deli meat - turkey">cheese - soft, deli meat - turkey</td>
+        <td>USA</td>
+      </tr>
+      <tr data-pathogen="Campylobacter" data-search="pds_c_001.1 campylobacter chicken - retail usa">
+        <td><span class="badge badge-pathogen-campylobacter">Campylobacter</span></td>
+        <td class="mono"><a href="clusters/campylobacter-pds-c-001-1.html">PDS_C_001.1</a></td>
+        <td class="num" data-sort="1">1</td>
+        <td class="num" data-sort="1">1</td>
+        <td class="num" data-sort="6">
+<span class="badge badge-snp">≤6</span>        </td>
+        <td class="mono" data-sort="2026-05-13">2026-05-13</td>
+        <td class="truncate" title="chicken - retail">chicken - retail</td>
+        <td>USA</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Tight cross-cluster nonhuman neighbors</h2>
+    <span class="count">early-warning · sorted by SNP distance</span>
+  </div>
+
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Pathogen</th>
+        <th>Isolate</th>
+        <th class="num sortable" data-sort-dir="asc">min_diff</th>
+        <th>Source</th>
+        <th>Own cluster</th>
+        <th class="sortable">Collected</th>
+        <th>Geography</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-pathogen="Salmonella" data-search="pdt0020.1 pds000333001.1 swine - cecal contents usa: maryland">
+        <td><span class="badge badge-pathogen-salmonella">Salmonella</span></td>
+        <td class="mono">PDT0020.1</td>
+        <td class="num" data-sort="3"><span class="badge badge-snp">≤3</span></td>
+        <td class="truncate" title="swine - cecal contents">swine - cecal contents</td>
+        <td class="mono"><a href="clusters/salmonella-pds000333001-1.html">PDS000333001.1</a></td>
+        <td class="mono" data-sort="2026-05-06">2026-05-06</td>
+        <td>USA: Maryland</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<script src="assets/js/dashboard.js"></script>
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>About</h4>
+      <p class="footer-colophon">
+        Pathogen Watch is an open-access daily surveillance digest of human–animal–environmental
+        SNP clusters in foodborne pathogens, derived from the NCBI Pathogen Detection nightly
+        snapshot. Built by Bradd Haley, PhD at the USDA Agricultural Research Service.
+      </p>
+      <p>
+        Source code: <a href="https://github.com/bhaley1/pathogen-watch">github.com/bhaley1/pathogen-watch</a>
+      </p>
+    </div>
+    <div>
+      <h4>Subscribe</h4>
+      <ul>
+        <li><a href="feed.xml">RSS feed</a></li>
+        <li><a href="https://github.com/bhaley1/pathogen-watch/discussions">Discussions</a></li>
+        <li><a href="https://github.com/bhaley1/pathogen-watch/issues/new?labels=feedback">Submit feedback</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Data</h4>
+      <ul>
+        <li><a href="data.html">Downloads &amp; API</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pathogens/">NCBI Pathogen Detection</a></li>
+        <li><a href="methods.html">Methods</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

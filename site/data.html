@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data &amp; API · Pathogen Watch</title>
+  <meta name="description" content="Open-access daily surveillance of human–animal–environmental genomic clusters of Salmonella, STEC, Listeria, and Campylobacter.">
+  <meta name="author" content="Bradd Haley, PhD">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pathogen Watch">
+  <meta property="og:description" content="Open-access daily surveillance of human–animal–environmental genomic clusters of Salmonella, STEC, Listeria, and Campylobacter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bhaley1.github.io/pathogen-watch/data.html">
+
+  <link rel="alternate" type="application/rss+xml" title="Pathogen Watch — daily alerts" href="feed.xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <a class="brand" href="index.html">
+      Pathogen Watch
+      <span class="brand-sub">a daily surveillance digest</span>
+    </a>
+    <div class="masthead-meta">
+      <div>Updated <strong>May 21, 2026</strong></div>
+      <div>Edition № 21</div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="">Dashboard</a>
+    <a href="timeline.html" class="">Timeline</a>
+    <a href="methods.html" class="">Methods</a>
+    <a href="data.html" class="active">Data &amp; API</a>
+    <a href="about.html" class="">About</a>
+    <div class="nav-spacer"></div>
+    <span class="nav-extra">PDG&nbsp;PDG000000002.5210</span>
+  </div>
+</nav>
+
+<main class="container">
+
+<div class="prose">
+  <h1 style="font-family: var(--serif); font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin: 32px 0 8px;">Data &amp; API</h1>
+  <p style="font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink-faint); margin-top: 0;">
+    All Pathogen Watch data is open access. Use it, build on it, cite it.
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Downloads</h2>
+  <p>Refreshed every morning at 09:00 UTC. Same data the site is built from.</p>
+
+  <div class="download-pills">
+    <a class="download-pill" href="data/clusters.json">clusters.json</a>
+    <a class="download-pill" href="data/clusters.csv">clusters.csv</a>
+    <a class="download-pill" href="data/events.json">events.json</a>
+    <a class="download-pill" href="data/events.csv">events.csv</a>
+    <a class="download-pill" href="data/near_neighbors.json">near_neighbors.json</a>
+    <a class="download-pill" href="data/near_neighbors.csv">near_neighbors.csv</a>
+  </div>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">RSS / Atom</h2>
+  <p>
+    Subscribe to <a href="feed.xml">feed.xml</a> in any RSS reader
+    (Feedly, Inoreader, NetNewsWire, Thunderbird) for a notification each time
+    a new alert event is detected.
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Schemas</h2>
+  <p><strong>clusters.json</strong> — one record per active human-containing cluster:</p>
+  <pre style="font-family: var(--mono); font-size: 12.5px; background: var(--paper-2); padding: 14px; overflow-x: auto;">{
+  "pathogen": "Salmonella",
+  "pds_acc": "PDS000123456.7",
+  "n_human": 4,
+  "n_nonhuman": 2,
+  "tightest_human_min_same": 3,
+  "latest_collection": "2026-05-14",
+  "countries": ["USA"],
+  "nonhuman_sources": ["bovine - milk", "poultry"],
+  "ncbi_url": "https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000123456.7",
+  "site_url": "https://bhaley1.github.io/pathogen-watch/clusters/salmonella-pds000123456-7.html"
+}</pre>
+
+  <p><strong>events.json</strong> — one record per alert event:</p>
+  <pre style="font-family: var(--mono); font-size: 12.5px; background: var(--paper-2); padding: 14px; overflow-x: auto;">{
+  "detected_date": "2026-05-21",
+  "event_type": "new_human_in_cluster",
+  "pathogen": "Salmonella",
+  "pds_acc": "PDS000123456.7",
+  "summary": "Cluster PDS000123456.7 gained 1 new human case(s) (now 4 total)",
+  "new_pdt_accs": ["PDT001234567.1"]
+}</pre>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">License &amp; citation</h2>
+  <p>
+    Data and code released under
+    <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 / public domain</a>.
+    Suggested citation:
+  </p>
+  <p style="font-family: var(--mono); font-size: 13px; background: var(--paper-2); padding: 12px;">
+    Haley B (2026). Pathogen Watch: daily SNP-cluster surveillance from NCBI
+    Pathogen Detection. https://bhaley1.github.io/pathogen-watch
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Source code</h2>
+  <p>
+    The full pipeline — fetcher, parser, cluster analysis, diff engine, site
+    generator — is at
+    <a href="https://github.com/bhaley1/pathogen-watch">github.com/bhaley1/pathogen-watch</a>.
+    Pull requests welcome.
+  </p>
+</div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>About</h4>
+      <p class="footer-colophon">
+        Pathogen Watch is an open-access daily surveillance digest of human–animal–environmental
+        SNP clusters in foodborne pathogens, derived from the NCBI Pathogen Detection nightly
+        snapshot. Built by Bradd Haley, PhD at the USDA Agricultural Research Service.
+      </p>
+      <p>
+        Source code: <a href="https://github.com/bhaley1/pathogen-watch">github.com/bhaley1/pathogen-watch</a>
+      </p>
+    </div>
+    <div>
+      <h4>Subscribe</h4>
+      <ul>
+        <li><a href="feed.xml">RSS feed</a></li>
+        <li><a href="https://github.com/bhaley1/pathogen-watch/discussions">Discussions</a></li>
+        <li><a href="https://github.com/bhaley1/pathogen-watch/issues/new?labels=feedback">Submit feedback</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Data</h4>
+      <ul>
+        <li><a href="data.html">Downloads &amp; API</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pathogens/">NCBI Pathogen Detection</a></li>
+        <li><a href="methods.html">Methods</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

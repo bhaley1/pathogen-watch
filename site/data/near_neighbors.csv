@@ -1,0 +1,4 @@
+pathogen,pdt_acc,pds_acc,min_diff,threshold,source,geo,collection_date
+Salmonella,PDT0020.1,PDS000333001.1,3,5,swine - cecal contents,USA: Maryland,2026-05-06
+Salmonella,PDT0020.1,PDS000333001.1,3,10,swine - cecal contents,USA: Maryland,2026-05-06
+Salmonella,PDT0020.1,PDS000333001.1,3,50,swine - cecal contents,USA: Maryland,2026-05-06

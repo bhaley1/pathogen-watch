@@ -1,0 +1,103 @@
+name: Daily pathogen surveillance
+
+on:
+  schedule:
+    # 09:00 UTC = 04:00 EST / 05:00 EDT.
+    # NCBI's nightly Pathogen Detection snapshot publishes ~03:00-06:00 UTC,
+    # so by 09:00 UTC the latest release is available.
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+    inputs:
+      no_email:
+        description: "Skip email send"
+        type: boolean
+        default: false
+      no_state:
+        description: "Skip state load/save (one-off; no alert events)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # commit updated state/ digests/ site/ back to repo
+  pages: write      # deploy via gh-pages branch
+  id-token: write   # OIDC for Pages deployment
+
+concurrency:
+  group: pathogen-watch
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Cache NCBI downloads
+        uses: actions/cache@v4
+        with:
+          path: cache/
+          key: ncbi-cache-${{ github.run_id }}
+          restore-keys: |
+            ncbi-cache-
+
+      - name: Run daily pipeline
+        env:
+          # SMTP (email digest)
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          ALERT_FROM: ${{ secrets.ALERT_FROM }}
+          ALERT_TO:   ${{ secrets.ALERT_TO }}
+          # Site
+          SITE_BASE_URL:     ${{ vars.SITE_BASE_URL }}
+          GISCUS_REPO:       ${{ vars.GISCUS_REPO }}
+          GISCUS_REPO_ID:    ${{ vars.GISCUS_REPO_ID }}
+          GISCUS_CATEGORY:   ${{ vars.GISCUS_CATEGORY }}
+          GISCUS_CATEGORY_ID: ${{ vars.GISCUS_CATEGORY_ID }}
+        run: |
+          flags=""
+          if [ "${{ inputs.no_email }}" = "true" ]; then flags="$flags --no-email"; fi
+          if [ "${{ inputs.no_state }}" = "true" ]; then flags="$flags --no-state"; fi
+          python -m src.main -v $flags
+
+      - name: Commit updated state, digests, history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state/ digests/ || true
+          if git diff --cached --quiet; then
+            echo "No state/digest changes to commit."
+          else
+            git commit -m "Daily run $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Upload site as Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

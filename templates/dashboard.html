@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% set nav_page = "dashboard" %}
+{% block title %}{{ site.title }} — Daily SNP-cluster surveillance{% endblock %}
+
+{% block content %}
+
+<p class="lede">
+  Every morning, <strong>Pathogen Watch</strong> reads the latest NCBI Pathogen
+  Detection snapshot and surfaces SNP-based clusters that mix
+  <strong>human clinical cases</strong> with isolates from food, animals, or the
+  environment. New clusters and new additions to existing clusters are tracked
+  day-over-day; nonhuman isolates within tight SNP distance of others are
+  flagged as early-warning candidates.
+</p>
+
+<section>
+  <div class="tiles">
+    <div class="tile">
+      <div class="tile-label">New events today</div>
+      <div class="tile-value {% if totals.new_events > 0 %}alert{% endif %}">{{ totals.new_events }}</div>
+      <div class="tile-delta">across {{ totals.pathogens }} pathogens</div>
+    </div>
+    <div class="tile">
+      <div class="tile-label">Active mixed clusters</div>
+      <div class="tile-value">{{ totals.mixed_clusters }}</div>
+      <div class="tile-delta">human + nonhuman, last {{ window_days }} days</div>
+    </div>
+    <div class="tile">
+      <div class="tile-label">Human-containing clusters</div>
+      <div class="tile-value">{{ totals.human_clusters }}</div>
+      <div class="tile-delta">≥1 clinical isolate</div>
+    </div>
+    <div class="tile">
+      <div class="tile-label">Tight cross-cluster nonhumans</div>
+      <div class="tile-value">{{ totals.tight_neighbors }}</div>
+      <div class="tile-delta">≤5 SNPs to a different PDS</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>New alert events</h2>
+    <span class="count">last {{ recent_days }} days · <span id="visible-count">{{ recent_events|length }}</span> rows</span>
+  </div>
+
+  {% if recent_events %}
+  <div class="filterbar">
+    <span class="filterbar-label">Pathogen</span>
+    {% for p, c in pathogen_counts.items() %}
+      <button class="chip active" data-pathogen-toggle="{{ p }}">{{ p }}<span class="chip-count">{{ c }}</span></button>
+    {% endfor %}
+    <button class="chip" data-pathogen-all>All</button>
+    <button class="chip" data-pathogen-none>None</button>
+    <input type="search" id="search-input" class="search" placeholder="Search cluster ID, source, country…">
+  </div>
+
+  <table class="data">
+    <thead>
+      <tr>
+        <th class="sortable" data-sort-dir="desc">Date</th>
+        <th>Pathogen</th>
+        <th>Event</th>
+        <th>Cluster</th>
+        <th>Summary</th>
+        <th class="num sortable">Humans</th>
+        <th class="num sortable">Nonhuman</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for ev in recent_events %}
+      <tr data-pathogen="{{ ev.pathogen }}" data-search="{{ ev.search_text }}">
+        <td class="mono" data-sort="{{ ev.detected_iso }}">{{ ev.detected_short }}</td>
+        <td><span class="badge badge-pathogen-{{ ev.pathogen|lower }}">{{ ev.pathogen }}</span></td>
+        <td><span class="badge {{ ev.badge_class }}">{{ ev.label }}</span></td>
+        <td class="mono"><a href="{{ rel_root }}clusters/{{ ev.cluster_slug }}.html">{{ ev.pds_acc }}</a></td>
+        <td class="truncate" title="{{ ev.summary }}">{{ ev.summary }}</td>
+        <td class="num" data-sort="{{ ev.n_human }}">{{ ev.n_human }}</td>
+        <td class="num" data-sort="{{ ev.n_nonhuman }}">{{ ev.n_nonhuman }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <div class="empty">No new events in the last {{ recent_days }} days. Quiet is good.</div>
+  {% endif %}
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Active mixed clusters</h2>
+    <span class="count">human + nonhuman · last {{ window_days }} days</span>
+  </div>
+
+  {% if mixed_clusters %}
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Pathogen</th>
+        <th>Cluster</th>
+        <th class="num sortable">Hu</th>
+        <th class="num sortable">Non-Hu</th>
+        <th class="num sortable" data-sort-dir="asc">Tightest gap</th>
+        <th class="sortable">Latest</th>
+        <th>Nonhuman sources</th>
+        <th>Geography</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for c in mixed_clusters %}
+      <tr data-pathogen="{{ c.pathogen }}" data-search="{{ c.search_text }}">
+        <td><span class="badge badge-pathogen-{{ c.pathogen|lower }}">{{ c.pathogen }}</span></td>
+        <td class="mono"><a href="{{ rel_root }}clusters/{{ c.slug }}.html">{{ c.pds_acc }}</a></td>
+        <td class="num" data-sort="{{ c.n_human }}">{{ c.n_human }}</td>
+        <td class="num" data-sort="{{ c.n_nonhuman }}">{{ c.n_nonhuman }}</td>
+        <td class="num" data-sort="{{ c.tightest_gap_sort }}">
+          {% if c.tightest_gap is not none %}<span class="badge badge-snp">≤{{ c.tightest_gap }}</span>{% else %}—{% endif %}
+        </td>
+        <td class="mono" data-sort="{{ c.latest_iso }}">{{ c.latest_short }}</td>
+        <td class="truncate" title="{{ c.sources_full }}">{{ c.sources }}</td>
+        <td>{{ c.countries }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <div class="empty">No active mixed clusters in the recent window.</div>
+  {% endif %}
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Tight cross-cluster nonhuman neighbors</h2>
+    <span class="count">early-warning · sorted by SNP distance</span>
+  </div>
+
+  {% if tight_neighbors %}
+  <table class="data">
+    <thead>
+      <tr>
+        <th>Pathogen</th>
+        <th>Isolate</th>
+        <th class="num sortable" data-sort-dir="asc">min_diff</th>
+        <th>Source</th>
+        <th>Own cluster</th>
+        <th class="sortable">Collected</th>
+        <th>Geography</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for n in tight_neighbors %}
+      <tr data-pathogen="{{ n.pathogen }}" data-search="{{ n.search_text }}">
+        <td><span class="badge badge-pathogen-{{ n.pathogen|lower }}">{{ n.pathogen }}</span></td>
+        <td class="mono">{{ n.pdt_acc }}</td>
+        <td class="num" data-sort="{{ n.min_diff }}"><span class="badge badge-snp">≤{{ n.min_diff }}</span></td>
+        <td class="truncate" title="{{ n.source }}">{{ n.source }}</td>
+        <td class="mono"><a href="{{ rel_root }}clusters/{{ n.cluster_slug }}.html">{{ n.pds_acc }}</a></td>
+        <td class="mono" data-sort="{{ n.collection_iso }}">{{ n.collection_short }}</td>
+        <td>{{ n.geo }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <div class="empty">No nonhuman isolates within ≤50 SNPs of a different cluster today.</div>
+  {% endif %}
+</section>
+
+<script src="{{ rel_root }}assets/js/dashboard.js"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-05-21",
+  "count": 3,
+  "near_neighbors": [
+    {
+      "pathogen": "Salmonella",
+      "pdt_acc": "PDT0020.1",
+      "pds_acc": "PDS000333001.1",
+      "min_diff": 3,
+      "threshold": 5,
+      "source": "swine - cecal contents",
+      "geo": "USA: Maryland",
+      "collection_date": "2026-05-06"
+    },
+    {
+      "pathogen": "Salmonella",
+      "pdt_acc": "PDT0020.1",
+      "pds_acc": "PDS000333001.1",
+      "min_diff": 3,
+      "threshold": 10,
+      "source": "swine - cecal contents",
+      "geo": "USA: Maryland",
+      "collection_date": "2026-05-06"
+    },
+    {
+      "pathogen": "Salmonella",
+      "pdt_acc": "PDT0020.1",
+      "pds_acc": "PDS000333001.1",
+      "min_diff": 3,
+      "threshold": 50,
+      "source": "swine - cecal contents",
+      "geo": "USA: Maryland",
+      "collection_date": "2026-05-06"
+    }
+  ]
+}

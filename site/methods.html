@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methods · Pathogen Watch</title>
+  <meta name="description" content="Open-access daily surveillance of human–animal–environmental genomic clusters of Salmonella, STEC, Listeria, and Campylobacter.">
+  <meta name="author" content="Bradd Haley, PhD">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pathogen Watch">
+  <meta property="og:description" content="Open-access daily surveillance of human–animal–environmental genomic clusters of Salmonella, STEC, Listeria, and Campylobacter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bhaley1.github.io/pathogen-watch/methods.html">
+
+  <link rel="alternate" type="application/rss+xml" title="Pathogen Watch — daily alerts" href="feed.xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <a class="brand" href="index.html">
+      Pathogen Watch
+      <span class="brand-sub">a daily surveillance digest</span>
+    </a>
+    <div class="masthead-meta">
+      <div>Updated <strong>May 21, 2026</strong></div>
+      <div>Edition № 21</div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="">Dashboard</a>
+    <a href="timeline.html" class="">Timeline</a>
+    <a href="methods.html" class="active">Methods</a>
+    <a href="data.html" class="">Data &amp; API</a>
+    <a href="about.html" class="">About</a>
+    <div class="nav-spacer"></div>
+    <span class="nav-extra">PDG&nbsp;PDG000000002.5210</span>
+  </div>
+</nav>
+
+<main class="container">
+
+<div class="prose">
+  <h1 style="font-family: var(--serif); font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin: 32px 0 8px;">Methods</h1>
+  <p style="font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--ink-faint); margin-top: 0;">
+    How Pathogen Watch turns NCBI's nightly snapshot into a daily surveillance feed.
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Data source</h2>
+  <p>
+    Each morning at 09:00 UTC (04:00 EST / 05:00 EDT), Pathogen Watch reads the
+    latest <a href="https://www.ncbi.nlm.nih.gov/pathogens/">NCBI Pathogen
+    Detection</a> metadata snapshot for four taxgroups: <em>Salmonella</em>,
+    <em>Escherichia coli &amp; Shigella</em> (filtered to STEC by Shiga-toxin
+    gene presence), <em>Listeria</em>, and <em>Campylobacter</em>. The
+    snapshots are published nightly at
+    <code>ftp.ncbi.nlm.nih.gov/pathogen/Results/</code> under release accessions
+    of the form <code>PDG000000002.NNNN</code>.
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Cluster definition</h2>
+  <p>
+    NCBI's PDS (Pathogen Detection SNP) clusters are recomputed nightly using
+    a 50-SNP single-linkage threshold within each reference target. We accept
+    those cluster assignments as the unit of analysis. For each isolate we
+    record its <code>PDS_acc</code> (cluster membership),
+    <code>epi_type</code> (clinical = human; everything else = nonhuman),
+    <code>min_same</code> (SNPs to the nearest other isolate in the same
+    cluster), and <code>min_diff</code> (SNPs to the nearest isolate in any
+    other cluster).
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Alert triggers</h2>
+  <p>Three day-over-day events generate alerts:</p>
+  <p><strong>New human cluster.</strong> A cluster appears in today's snapshot
+  that was not in yesterday's, and it contains at least 2 human clinical
+  isolates.</p>
+  <p><strong>Human added to existing cluster.</strong> A previously-tracked
+  cluster has a new human <code>PDT_acc</code> today.</p>
+  <p><strong>Nonhuman added to human cluster.</strong> A cluster with at least
+  one human isolate gains a new nonhuman isolate today.</p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Near-neighbor surveillance</h2>
+  <p>
+    Independently of clustering, we flag any nonhuman isolate whose
+    <code>min_diff</code> is ≤5, ≤10, or ≤50 SNPs. These are isolates whose
+    nearest neighbor in a <em>different</em> cluster is tight enough that the
+    next PDS recomputation may merge the two clusters. When the neighboring
+    cluster contains humans, this is a leading indicator.
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Important caveats</h2>
+  <p>
+    <strong>min_same is an upper bound, not the exact human↔X distance.</strong>
+    If a human isolate's <code>min_same</code> = 3, its nearest neighbor within
+    the cluster is 3 SNPs away — but that neighbor might be another human. For
+    exact pairwise distances between specific isolates, retrieve the per-cluster
+    SNP matrix from NCBI directly via the link on each cluster page.
+  </p>
+  <p>
+    <strong>STEC filtering uses AMRFinderPlus stx hits.</strong> Stx-negative
+    pathogenic <em>E. coli</em> (EPEC, ETEC, EHEC variants without typeable
+    stx) will not appear under the STEC label.
+  </p>
+  <p>
+    <strong>NCBI is the source of truth.</strong> Pathogen Watch is a
+    visualization and diffing layer; the clustering and SNP calls are NCBI's.
+    If a cluster you care about disappears here, it has been split, merged, or
+    reassigned upstream — check the
+    <a href="https://www.ncbi.nlm.nih.gov/pathogens/">live browser</a>.
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Reproducibility</h2>
+  <p>
+    Every daily build is committed to
+    <a href="https://github.com/bhaley1/pathogen-watch">github.com/bhaley1/pathogen-watch</a>.
+    The per-pathogen state snapshots are tracked in <code>state/</code> and the
+    rendered digests in <code>digests/</code>; you can <code>git log</code> any
+    cluster to see exactly when it was first observed and how it has changed.
+  </p>
+</div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>About</h4>
+      <p class="footer-colophon">
+        Pathogen Watch is an open-access daily surveillance digest of human–animal–environmental
+        SNP clusters in foodborne pathogens, derived from the NCBI Pathogen Detection nightly
+        snapshot. Built by Bradd Haley, PhD at the USDA Agricultural Research Service.
+      </p>
+      <p>
+        Source code: <a href="https://github.com/bhaley1/pathogen-watch">github.com/bhaley1/pathogen-watch</a>
+      </p>
+    </div>
+    <div>
+      <h4>Subscribe</h4>
+      <ul>
+        <li><a href="feed.xml">RSS feed</a></li>
+        <li><a href="https://github.com/bhaley1/pathogen-watch/discussions">Discussions</a></li>
+        <li><a href="https://github.com/bhaley1/pathogen-watch/issues/new?labels=feedback">Submit feedback</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Data</h4>
+      <ul>
+        <li><a href="data.html">Downloads &amp; API</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pathogens/">NCBI Pathogen Detection</a></li>
+        <li><a href="methods.html">Methods</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

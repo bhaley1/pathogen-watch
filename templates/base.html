@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ site.title }}{% endblock %}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.author }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% block og_title %}{{ site.title }}{% endblock %}">
+  <meta property="og:description" content="{% block og_desc %}{{ site.description }}{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.base_url }}{{ page_url|default('/') }}">
+
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} — daily alerts" href="{{ rel_root }}feed.xml">
+  <link rel="stylesheet" href="{{ rel_root }}assets/css/main.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <a class="brand" href="{{ rel_root }}index.html">
+      Pathogen Watch
+      <span class="brand-sub">a daily surveillance digest</span>
+    </a>
+    <div class="masthead-meta">
+      <div>Updated <strong>{{ run_date_long }}</strong></div>
+      <div>Edition № {{ edition_no }}</div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="{{ rel_root }}index.html" class="{% if nav_page == 'dashboard' %}active{% endif %}">Dashboard</a>
+    <a href="{{ rel_root }}timeline.html" class="{% if nav_page == 'timeline' %}active{% endif %}">Timeline</a>
+    <a href="{{ rel_root }}methods.html" class="{% if nav_page == 'methods' %}active{% endif %}">Methods</a>
+    <a href="{{ rel_root }}data.html" class="{% if nav_page == 'data' %}active{% endif %}">Data &amp; API</a>
+    <a href="{{ rel_root }}about.html" class="{% if nav_page == 'about' %}active{% endif %}">About</a>
+    <div class="nav-spacer"></div>
+    <span class="nav-extra">PDG&nbsp;{{ latest_pdg }}</span>
+  </div>
+</nav>
+
+<main class="container">
+  {% block content %}{% endblock %}
+</main>
+
+<footer>
+  <div class="container">
+    <div>
+      <h4>About</h4>
+      <p class="footer-colophon">
+        Pathogen Watch is an open-access daily surveillance digest of human–animal–environmental
+        SNP clusters in foodborne pathogens, derived from the NCBI Pathogen Detection nightly
+        snapshot. Built by {{ site.author }} at the {{ site.affiliation }}.
+      </p>
+      <p>
+        Source code: <a href="https://github.com/{{ giscus.repo }}">github.com/{{ giscus.repo }}</a>
+      </p>
+    </div>
+    <div>
+      <h4>Subscribe</h4>
+      <ul>
+        <li><a href="{{ rel_root }}feed.xml">RSS feed</a></li>
+        <li><a href="https://github.com/{{ giscus.repo }}/discussions">Discussions</a></li>
+        <li><a href="https://github.com/{{ giscus.repo }}/issues/new?labels=feedback">Submit feedback</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Data</h4>
+      <ul>
+        <li><a href="{{ rel_root }}data.html">Downloads &amp; API</a></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/pathogens/">NCBI Pathogen Detection</a></li>
+        <li><a href="{{ rel_root }}methods.html">Methods</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

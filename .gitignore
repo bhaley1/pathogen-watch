@@ -1,0 +1,24 @@
+# Downloaded NCBI metadata (large, regenerable)
+cache/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Keep state/, digests/, and site/ tracked — they're the surveillance trail
+!state/
+!digests/
+!site/

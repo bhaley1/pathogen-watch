@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% set nav_page = "about" %}
+{% block title %}About · {{ site.title }}{% endblock %}
+
+{% block content %}
+
+<div class="prose">
+  <h1 style="font-family: var(--serif); font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin: 32px 0 8px;">About Pathogen Watch</h1>
+
+  <p>
+    Foodborne illness in the United States is monitored by an ecosystem of
+    overlapping systems — PulseNet, FoodNet, the FDA Coordinated Outbreak
+    Response and Evaluation network, and the USDA Food Safety and Inspection
+    Service among them. NCBI Pathogen Detection sits beneath all of them as
+    the genomic reference: a nightly recomputation of SNP-based clusters
+    across every <em>Salmonella</em>, STEC, <em>Listeria</em>, and
+    <em>Campylobacter</em> isolate sequenced under public-health, regulatory,
+    or research programs in any country.
+  </p>
+
+  <p>
+    NCBI's browser is excellent at <em>finding</em> a cluster you already know
+    about. It is less useful for the inverse question: <em>what changed
+    overnight?</em> Pathogen Watch exists to answer that question.
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Audience</h2>
+  <p>
+    Epidemiologists, microbiologists, food-safety regulators, animal-health
+    officials, public-health graduate students, and any scientist or
+    journalist tracking human–animal–environmental linkages in foodborne
+    pathogen genomics. No login is required to read; commenting requires only
+    a free GitHub account.
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">What this is not</h2>
+  <p>
+    Pathogen Watch is <strong>not</strong> an official outbreak detection
+    system, regulatory action trigger, or substitute for PulseNet, FoodNet,
+    or any state or federal investigation. Cluster membership at NCBI
+    Pathogen Detection is computed on the genomic data submitted to it; many
+    investigations involve additional epidemiologic, environmental, and
+    traceback evidence that does not appear here. Cluster events surfaced
+    here may correspond to actively-investigated outbreaks, dormant historical
+    clusters, sequencing-survey artifacts, or none of the above.
+  </p>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Contact &amp; contributions</h2>
+  <p>
+    Comments, corrections, feature requests, and pull requests are all
+    welcome:
+  </p>
+  <ul>
+    <li>Per-cluster discussion: comment below any cluster page (GitHub auth).</li>
+    <li>Bugs and feature requests: <a href="https://github.com/{{ giscus.repo }}/issues">file an issue</a>.</li>
+    <li>Code contributions: open a PR against <a href="https://github.com/{{ giscus.repo }}">the repo</a>.</li>
+  </ul>
+
+  <h2 style="font-family: var(--serif); font-size: 24px; margin: 40px 0 8px;">Author</h2>
+  <p>
+    Built and maintained by <strong>{{ site.author }}</strong>, Lead Research
+    Microbiologist, {{ site.affiliation }}. Personal project; views expressed
+    here are the author's and do not represent the USDA, ARS, or any other
+    agency.
+  </p>
+</div>
+
+{% endblock %}
