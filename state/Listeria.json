@@ -43050,22 +43050,20 @@
       "pds_acc": "PDS000038785.1",
       "tightest_human_min_same": null
     },
-    "PDS000038829.4": {
+    "PDS000038829.5": {
       "human_pdt_accs": [
         "PDT000410988.1",
         "PDT000410990.1",
         "PDT000414307.1",
-        "PDT000657077.1",
-        "PDT002872760.1"
+        "PDT000657077.1"
       ],
-      "latest_collection": "2025-01-01",
-      "n_human": 5,
-      "n_nonhuman": 2,
+      "latest_collection": "2019-12-01",
+      "n_human": 4,
+      "n_nonhuman": 1,
       "nonhuman_pdt_accs": [
-        "PDT000129661.2",
-        "PDT003178730.1"
+        "PDT000129661.2"
       ],
-      "pds_acc": "PDS000038829.4",
+      "pds_acc": "PDS000038829.5",
       "tightest_human_min_same": null
     },
     "PDS000038838.1": {
@@ -84214,7 +84212,7 @@
     }
   },
   "pathogen": "Listeria",
-  "pdg_release": "PDG000000001.4712",
+  "pdg_release": "PDG000000001.4713",
   "version": 1,
-  "written_at": "2026-05-22T11:39:59.451241Z"
+  "written_at": "2026-05-23T10:23:38.123256Z"
 }
