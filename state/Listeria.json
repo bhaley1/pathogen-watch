@@ -1523,7 +1523,7 @@
       "pds_acc": "PDS000000361.46",
       "tightest_human_min_same": null
     },
-    "PDS000000366.716": {
+    "PDS000000366.717": {
       "human_pdt_accs": [
         "PDT000001112.5",
         "PDT000031702.26",
@@ -1732,9 +1732,9 @@
         "PDT003164097.1",
         "PDT003168708.1"
       ],
-      "latest_collection": "2026-03-01",
+      "latest_collection": "2026-04-27",
       "n_human": 206,
-      "n_nonhuman": 1977,
+      "n_nonhuman": 1978,
       "nonhuman_pdt_accs": [
         "PDT000000909.4",
         "PDT000000910.4",
@@ -3712,9 +3712,10 @@
         "PDT003211679.1",
         "PDT003215378.1",
         "PDT003219771.1",
-        "PDT003219778.1"
+        "PDT003219778.1",
+        "PDT003224718.1"
       ],
-      "pds_acc": "PDS000000366.716",
+      "pds_acc": "PDS000000366.717",
       "tightest_human_min_same": null
     },
     "PDS000000367.150": {
@@ -25266,7 +25267,7 @@
       "pds_acc": "PDS000024852.13",
       "tightest_human_min_same": null
     },
-    "PDS000024856.297": {
+    "PDS000024856.298": {
       "human_pdt_accs": [
         "PDT000000020.3",
         "PDT000000679.3",
@@ -25816,7 +25817,7 @@
       ],
       "latest_collection": "2026-04-23",
       "n_human": 545,
-      "n_nonhuman": 504,
+      "n_nonhuman": 505,
       "nonhuman_pdt_accs": [
         "PDT000000902.4",
         "PDT000000907.4",
@@ -26321,9 +26322,10 @@
         "PDT003219814.1",
         "PDT003219815.1",
         "PDT003219817.1",
-        "PDT003219828.1"
+        "PDT003219828.1",
+        "PDT003224719.1"
       ],
-      "pds_acc": "PDS000024856.297",
+      "pds_acc": "PDS000024856.298",
       "tightest_human_min_same": null
     },
     "PDS000024857.6": {
@@ -73188,19 +73190,20 @@
       "pds_acc": "PDS000179195.1",
       "tightest_human_min_same": null
     },
-    "PDS000179196.3": {
+    "PDS000179196.4": {
       "human_pdt_accs": [
-        "PDT002833225.1"
+        "PDT002833225.1",
+        "PDT003224101.1"
       ],
-      "latest_collection": "2025-07-01",
-      "n_human": 1,
+      "latest_collection": "2026-05-01",
+      "n_human": 2,
       "n_nonhuman": 3,
       "nonhuman_pdt_accs": [
         "PDT001000343.1",
         "PDT001828456.1",
         "PDT002118081.1"
       ],
-      "pds_acc": "PDS000179196.3",
+      "pds_acc": "PDS000179196.4",
       "tightest_human_min_same": null
     },
     "PDS000179392.2": {
@@ -73883,17 +73886,18 @@
       "pds_acc": "PDS000187235.1",
       "tightest_human_min_same": null
     },
-    "PDS000187517.2": {
+    "PDS000187517.3": {
       "human_pdt_accs": [
         "PDT000532529.1",
         "PDT002239159.1",
-        "PDT002255357.1"
+        "PDT002255357.1",
+        "PDT003224102.1"
       ],
-      "latest_collection": "2024-07-01",
-      "n_human": 3,
+      "latest_collection": "2026-05-01",
+      "n_human": 4,
       "n_nonhuman": 0,
       "nonhuman_pdt_accs": [],
-      "pds_acc": "PDS000187517.2",
+      "pds_acc": "PDS000187517.3",
       "tightest_human_min_same": null
     },
     "PDS000187775.3": {
@@ -84212,7 +84216,7 @@
     }
   },
   "pathogen": "Listeria",
-  "pdg_release": "PDG000000001.4713",
+  "pdg_release": "PDG000000001.4714",
   "version": 1,
-  "written_at": "2026-05-23T10:23:38.123256Z"
+  "written_at": "2026-05-24T10:28:35.364558Z"
 }
