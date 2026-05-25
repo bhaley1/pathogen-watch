@@ -571,7 +571,7 @@
       "pds_acc": "PDS000034109.3",
       "tightest_human_min_same": null
     },
-    "PDS000034128.416": {
+    "PDS000034128.417": {
       "human_pdt_accs": [
         "PDT001659110.1",
         "PDT002053898.1"
@@ -580,7 +580,7 @@
       "n_human": 2,
       "n_nonhuman": 0,
       "nonhuman_pdt_accs": [],
-      "pds_acc": "PDS000034128.416",
+      "pds_acc": "PDS000034128.417",
       "tightest_human_min_same": null
     },
     "PDS000034244.37": {
@@ -10319,6 +10319,17 @@
       "pds_acc": "PDS000195431.3",
       "tightest_human_min_same": null
     },
+    "PDS000197895.5": {
+      "human_pdt_accs": [
+        "PDT003224738.1"
+      ],
+      "latest_collection": "2026-05-01",
+      "n_human": 1,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000197895.5",
+      "tightest_human_min_same": null
+    },
     "PDS000199164.1": {
       "human_pdt_accs": [
         "PDT002202769.1"
@@ -10491,7 +10502,7 @@
       "pds_acc": "PDS000204498.12",
       "tightest_human_min_same": null
     },
-    "PDS000204584.513": {
+    "PDS000204584.514": {
       "human_pdt_accs": [
         "PDT000327087.2",
         "PDT000328093.1",
@@ -10501,7 +10512,7 @@
       "n_human": 3,
       "n_nonhuman": 0,
       "nonhuman_pdt_accs": [],
-      "pds_acc": "PDS000204584.513",
+      "pds_acc": "PDS000204584.514",
       "tightest_human_min_same": null
     },
     "PDS000204873.1": {
@@ -13830,7 +13841,7 @@
     }
   },
   "pathogen": "STEC",
-  "pdg_release": "PDG000000004.6069",
+  "pdg_release": "PDG000000004.6070",
   "version": 1,
-  "written_at": "2026-05-24T10:28:30.634968Z"
+  "written_at": "2026-05-25T12:21:03.039432Z"
 }
