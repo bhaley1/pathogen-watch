@@ -1,0 +1,95 @@
+NCBI Pathogen Detection — Daily Alert Digest
+Run date: 2026-06-17
+Total new events: 15
+========================================================================
+
+### Salmonella
+------------------------------------------------------------------------
+No new alert events.
+
+### STEC
+------------------------------------------------------------------------
+No new alert events.
+
+### Listeria
+------------------------------------------------------------------------
+NEW EVENTS (15):
+  [New human cluster] New cluster PDS000024856.303 with 546 human case(s) and 507 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000024856.303
+    New isolates: PDT000000020.3, PDT000000679.3, PDT000000683.3, PDT000000695.3, PDT000000902.4 (+1048 more)
+  [New human cluster] New cluster PDS000025037.103 with 133 human case(s) and 51 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000025037.103
+    New isolates: PDT000000063.3, PDT000001240.3, PDT000001711.3, PDT000001956.3, PDT000024404.3 (+179 more)
+  [New human cluster] New cluster PDS000000367.151 with 199 human case(s) and 83 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000000367.151
+    New isolates: PDT000000675.3, PDT000000964.3, PDT000002053.3, PDT000003526.3, PDT000026917.3 (+277 more)
+  [New human cluster] New cluster PDS000024645.271 with 67 human case(s) and 1009 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000024645.271
+    New isolates: PDT000000912.5, PDT000000913.4, PDT000000914.4, PDT000000959.4, PDT000034336.3 (+1071 more)
+  [New human cluster] New cluster PDS000024241.208 with 90 human case(s) and 737 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000024241.208
+    New isolates: PDT000000952.4, PDT000000957.3, PDT000033897.3, PDT000033899.3, PDT000036977.2 (+822 more)
+  [New human cluster] New cluster PDS000024708.183 with 192 human case(s) and 167 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000024708.183
+    New isolates: PDT000001967.3, PDT000137291.2, PDT000142566.2, PDT000142567.2, PDT000142568.2 (+354 more)
+  [New human cluster] New cluster PDS000003364.69 with 20 human case(s) and 37 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000003364.69
+    New isolates: PDT000034541.3, PDT000065849.2, PDT000097598.3, PDT000097599.3, PDT000097605.3 (+52 more)
+  [New human cluster] New cluster PDS000024682.218 with 856 human case(s) and 226 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000024682.218
+    New isolates: PDT000047029.5, PDT000095128.2, PDT000114125.1, PDT000114133.1, PDT000114769.1 (+1077 more)
+  [New human cluster] New cluster PDS000024618.56 with 57 human case(s) and 57 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000024618.56
+    New isolates: PDT000097505.3, PDT000097593.3, PDT000097607.3, PDT000097611.3, PDT000097889.3 (+109 more)
+  [New human cluster] New cluster PDS000025229.18 with 13 human case(s) and 4 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000025229.18
+    New isolates: PDT000097679.3, PDT000097778.3, PDT000153517.2, PDT000153585.2, PDT000454372.2 (+12 more)
+  [New human cluster] New cluster PDS000045769.14 with 6 human case(s) and 8 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000045769.14
+    New isolates: PDT000153976.3, PDT000500417.1, PDT000919443.1, PDT000919444.1, PDT000919445.1 (+9 more)
+  [New human cluster] New cluster PDS000043409.26 with 13 human case(s) and 9 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000043409.26
+    New isolates: PDT000295558.2, PDT000470396.1, PDT000532937.1, PDT000623250.1, PDT000641345.2 (+17 more)
+  [New human cluster] New cluster PDS000083799.19 with 26 human case(s) and 0 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000083799.19
+    New isolates: PDT000992815.1, PDT000992819.1, PDT001056517.1, PDT002015692.1, PDT002156407.1 (+21 more)
+  [New human cluster] New cluster PDS000181823.6 with 4 human case(s) and 0 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000181823.6
+    New isolates: PDT002156872.1, PDT002815955.1, PDT003254007.1, PDT003254009.1
+  [New human cluster] New cluster PDS000254862.3 with 5 human case(s) and 0 nonhuman isolate(s)
+    Cluster: https://www.ncbi.nlm.nih.gov/pathogens/isolates/#PDS000254862.3
+    New isolates: PDT003199385.1, PDT003199398.1, PDT003254010.1, PDT003254012.1, PDT003254014.1
+
+ACTIVE MIXED CLUSTERS (50 shown, most-recent first):
+  PDS000241110.13: 10 human / 32 nonhuman; tightest human gap: n/a; latest: 2026-06-02; sources: Cheese: Soft Ricotta Cheese, Requeson (soft ricotta), environmental swab, food (+1 more); geo: USA
+  PDS000024352.130: 36 human / 217 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Butchery_13, Butchery_30, Food products, Food-Meat (+21 more); geo: Austria, Belgium, Canada, Denmark, Germany (+11)
+  PDS000011656.8: 7 human / 3 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: food; geo: Ireland, Switzerland, United Kingdom
+  PDS000036645.98: 10 human / 139 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Food products, environmental, food, food processing environment (+4 more); geo: Belgium, Denmark, Germany, Italy, Netherlands (+2)
+  PDS000044451.21: 3 human / 24 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: environmental, food; geo: United Kingdom
+  PDS000217092.2: 2 human / 2 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: food; geo: United Kingdom
+  PDS000227030.2: 1 human / 4 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: River; geo: United Kingdom
+  PDS000065054.12: 9 human / 6 nonhuman; tightest human gap: n/a; latest: 2026-05-11; sources: frozen raw dog food, lung, milk, potato; geo: Mexico, USA
+  PDS000000314.99: 67 human / 32 nonhuman; tightest human gap: n/a; latest: 2026-05-11; sources: Environment, Environmental: food-contact surface, Frozen raw beef pet food, Pet Food (+14 more); geo: Mexico, Switzerland, USA, United Arab Emirates
+  PDS000003173.120: 120 human / 29 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Raw Meat, Raw Milk, Wastewater influent, Whole Red Cabbage (+14 more); geo: Sweden, USA
+  PDS000000366.720: 206 human / 1992 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Butchery_107, Butchery_18, Butchery_21, Butchery_58 (+371 more); geo: Australia, Canada, China, Costa Rica, Germany (+11)
+  PDS000024645.271: 67 human / 1009 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Butter sample from the Republic of Moldavia, Coldstore_1, Coldstore_5, Dairy (+101 more); geo: Australia, Austria, Belgium, Brazil, Canada (+28)
+  PDS000032941.250: 251 human / 388 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Agaricus bisporus production chain, Bos taurus, Cold smoked salmon, Cow feces (+71 more); geo: Australia, Austria, Belgium, Canada, Chile (+24)
+  PDS000025311.490: 853 human / 1267 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Arion vulgaris, Bos taurus, Caged livestock truck, Camenbert 50+ (+192 more); geo: Armenia, Australia, Austria, Belgium, Brazil (+41)
+  PDS000003244.106: 63 human / 93 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Basa fillet, Environment, Environmental: food-contact surface, Fish fillet (+21 more); geo: Australia, Belgium, Canada, China, Denmark (+14)
+  PDS000024682.218: 856 human / 226 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Arion vulgaris, Cow feces, Food processing environment, Food products (+35 more); geo: Belgium, Bulgaria, Canada, Cyprus, Denmark (+20)
+  PDS000024705.47: 34 human / 53 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Food processing environment, Food products, environmental, food (+3 more); geo: Canada, Italy, Switzerland, USA, United Kingdom
+  PDS000052700.22: 21 human / 23 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Bos taurus, Dairy farm, Feed, Food processing environment (+7 more); geo: Australia, Belgium, Finland, Germany, Italy (+5)
+  PDS000025361.36: 19 human / 17 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Halichoerus grypus, River, beef, environmental (+4 more); geo: Finland, France, Italy, Netherlands, Pakistan (+3)
+  PDS000025350.17: 13 human / 5 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: food, other, retail meat; geo: France, Germany, United Kingdom
+  PDS000024399.27: 17 human / 27 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Food-Meat, environmental, food; geo: United Kingdom
+  PDS000036641.75: 4 human / 147 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: environmental, food, other, water; geo: United Kingdom
+  PDS000070306.12: 10 human / 14 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Agaricus bisporus production chain, environmental, turkey, turkey goulash; geo: Belgium, Germany, Netherlands, Not Provided, United Kingdom
+  PDS000179196.4: 2 human / 3 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Floor at Door of fridge, beef, environmental; geo: Ireland, Netherlands, United Kingdom
+  PDS000111433.2: 3 human / 1 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: environmental; geo: United Kingdom
+
+### Campylobacter
+------------------------------------------------------------------------
+No new alert events.
+
+========================================================================
+Generated by pathogen-alerts. Source: NCBI Pathogen Detection.
