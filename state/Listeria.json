@@ -23200,7 +23200,7 @@
       "pds_acc": "PDS000024707.2",
       "tightest_human_min_same": null
     },
-    "PDS000024708.184": {
+    "PDS000024708.185": {
       "human_pdt_accs": [
         "PDT000001967.3",
         "PDT000153609.2",
@@ -23393,10 +23393,11 @@
         "PDT003199413.1",
         "PDT003199429.1",
         "PDT003242012.1",
-        "PDT003253898.1"
+        "PDT003253898.1",
+        "PDT003258830.1"
       ],
-      "latest_collection": "2026-04-01",
-      "n_human": 192,
+      "latest_collection": "2026-06-01",
+      "n_human": 193,
       "n_nonhuman": 176,
       "nonhuman_pdt_accs": [
         "PDT000137291.2",
@@ -23576,7 +23577,7 @@
         "PDT003258550.1",
         "PDT003258554.1"
       ],
-      "pds_acc": "PDS000024708.184",
+      "pds_acc": "PDS000024708.185",
       "tightest_human_min_same": null
     },
     "PDS000024715.16": {
@@ -41992,7 +41993,7 @@
       "pds_acc": "PDS000036641.75",
       "tightest_human_min_same": null
     },
-    "PDS000036645.98": {
+    "PDS000036645.99": {
       "human_pdt_accs": [
         "PDT000419342.2",
         "PDT000419757.2",
@@ -42007,7 +42008,7 @@
       ],
       "latest_collection": "2026-06-01",
       "n_human": 10,
-      "n_nonhuman": 139,
+      "n_nonhuman": 140,
       "nonhuman_pdt_accs": [
         "PDT000376256.2",
         "PDT000376274.2",
@@ -42147,9 +42148,10 @@
         "PDT003235310.1",
         "PDT003235324.1",
         "PDT003248979.1",
-        "PDT003249886.1"
+        "PDT003249886.1",
+        "PDT003258828.1"
       ],
-      "pds_acc": "PDS000036645.98",
+      "pds_acc": "PDS000036645.99",
       "tightest_human_min_same": null
     },
     "PDS000036650.34": {
@@ -44575,7 +44577,7 @@
       "pds_acc": "PDS000041945.12",
       "tightest_human_min_same": null
     },
-    "PDS000041947.176": {
+    "PDS000041947.177": {
       "human_pdt_accs": [
         "PDT000084854.3",
         "PDT000114791.1",
@@ -44915,10 +44917,11 @@
         "PDT003159839.1",
         "PDT003159847.1",
         "PDT003159859.1",
-        "PDT003172479.1"
+        "PDT003172479.1",
+        "PDT003258825.1"
       ],
-      "latest_collection": "2026-03-01",
-      "n_human": 339,
+      "latest_collection": "2026-06-01",
+      "n_human": 340,
       "n_nonhuman": 146,
       "nonhuman_pdt_accs": [
         "PDT000097775.3",
@@ -45068,7 +45071,7 @@
         "PDT003044575.1",
         "PDT003111909.1"
       ],
-      "pds_acc": "PDS000041947.176",
+      "pds_acc": "PDS000041947.177",
       "tightest_human_min_same": null
     },
     "PDS000041952.18": {
@@ -66262,19 +66265,18 @@
       "pds_acc": "PDS000108925.1",
       "tightest_human_min_same": null
     },
-    "PDS000108926.3": {
+    "PDS000108926.4": {
       "human_pdt_accs": [
         "PDT001297890.1"
       ],
       "latest_collection": "2010-01-01",
       "n_human": 1,
-      "n_nonhuman": 3,
+      "n_nonhuman": 2,
       "nonhuman_pdt_accs": [
         "PDT000474748.1",
-        "PDT003246437.1",
         "PDT003258511.1"
       ],
-      "pds_acc": "PDS000108926.3",
+      "pds_acc": "PDS000108926.4",
       "tightest_human_min_same": null
     },
     "PDS000109050.19": {
@@ -70555,7 +70557,7 @@
       "pds_acc": "PDS000156024.1",
       "tightest_human_min_same": null
     },
-    "PDS000156171.7": {
+    "PDS000156171.8": {
       "human_pdt_accs": [
         "PDT000037895.2",
         "PDT001121911.1",
@@ -70564,10 +70566,9 @@
       ],
       "latest_collection": "2021-01-06",
       "n_human": 4,
-      "n_nonhuman": 62,
+      "n_nonhuman": 61,
       "nonhuman_pdt_accs": [
         "PDT000000903.4",
-        "PDT000000905.5",
         "PDT000000906.5",
         "PDT000077332.3",
         "PDT000077333.3",
@@ -70629,7 +70630,7 @@
         "PDT002290595.1",
         "PDT002290596.1"
       ],
-      "pds_acc": "PDS000156171.7",
+      "pds_acc": "PDS000156171.8",
       "tightest_human_min_same": null
     },
     "PDS000156315.3": {
@@ -84630,7 +84631,7 @@
     }
   },
   "pathogen": "Listeria",
-  "pdg_release": "PDG000000001.4752",
+  "pdg_release": "PDG000000001.4754",
   "version": 1,
-  "written_at": "2026-06-19T12:45:18.074523Z"
+  "written_at": "2026-06-21T11:44:14.000096Z"
 }
