@@ -6235,7 +6235,7 @@
       "pds_acc": "PDS000003173.120",
       "tightest_human_min_same": null
     },
-    "PDS000003174.102": {
+    "PDS000003174.103": {
       "human_pdt_accs": [
         "PDT000044981.2",
         "PDT000066084.2",
@@ -6322,10 +6322,11 @@
         "PDT003061048.1",
         "PDT003073294.1",
         "PDT003183059.1",
-        "PDT003219730.1"
+        "PDT003219730.1",
+        "PDT003262633.1"
       ],
       "latest_collection": "2026-04-13",
-      "n_human": 86,
+      "n_human": 87,
       "n_nonhuman": 27,
       "nonhuman_pdt_accs": [
         "PDT000030598.4",
@@ -6356,7 +6357,7 @@
         "PDT003143582.1",
         "PDT003220551.1"
       ],
-      "pds_acc": "PDS000003174.102",
+      "pds_acc": "PDS000003174.103",
       "tightest_human_min_same": null
     },
     "PDS000003185.14": {
@@ -23745,14 +23746,14 @@
       "pds_acc": "PDS000024724.21",
       "tightest_human_min_same": null
     },
-    "PDS000024730.10": {
+    "PDS000024730.11": {
       "human_pdt_accs": [
         "PDT000171869.2",
         "PDT000337512.1",
         "PDT000351985.1",
-        "PDT001434963.1",
         "PDT002015074.1",
-        "PDT002015856.1"
+        "PDT002015856.1",
+        "PDT003262605.1"
       ],
       "latest_collection": "2021-01-01",
       "n_human": 6,
@@ -23761,7 +23762,7 @@
         "PDT000236335.3",
         "PDT000414697.1"
       ],
-      "pds_acc": "PDS000024730.10",
+      "pds_acc": "PDS000024730.11",
       "tightest_human_min_same": null
     },
     "PDS000024731.23": {
@@ -25365,7 +25366,7 @@
       "pds_acc": "PDS000024852.13",
       "tightest_human_min_same": null
     },
-    "PDS000024856.307": {
+    "PDS000024856.308": {
       "human_pdt_accs": [
         "PDT000000020.3",
         "PDT000000679.3",
@@ -25913,10 +25914,11 @@
         "PDT003247544.1",
         "PDT003254005.1",
         "PDT003254910.1",
+        "PDT003261185.1",
         "PDT003261291.1"
       ],
       "latest_collection": "2026-06-01",
-      "n_human": 547,
+      "n_human": 548,
       "n_nonhuman": 511,
       "nonhuman_pdt_accs": [
         "PDT000000902.4",
@@ -26431,7 +26433,7 @@
         "PDT003258494.1",
         "PDT003260883.1"
       ],
-      "pds_acc": "PDS000024856.307",
+      "pds_acc": "PDS000024856.308",
       "tightest_human_min_same": null
     },
     "PDS000024857.6": {
@@ -47412,15 +47414,13 @@
       "pds_acc": "PDS000044588.3",
       "tightest_human_min_same": null
     },
-    "PDS000044593.48": {
+    "PDS000044593.49": {
       "human_pdt_accs": [
         "PDT000291568.3",
         "PDT000294349.2",
         "PDT000691486.1",
         "PDT000768147.1",
         "PDT000859343.1",
-        "PDT001056518.1",
-        "PDT001056519.1",
         "PDT001058701.1",
         "PDT001058740.1",
         "PDT001148376.1",
@@ -47447,7 +47447,9 @@
         "PDT002957470.1",
         "PDT003129733.1",
         "PDT003154805.1",
-        "PDT003171784.1"
+        "PDT003171784.1",
+        "PDT003262607.1",
+        "PDT003262608.1"
       ],
       "latest_collection": "2026-04-01",
       "n_human": 34,
@@ -47487,7 +47489,7 @@
         "PDT002872381.1",
         "PDT003011399.1"
       ],
-      "pds_acc": "PDS000044593.48",
+      "pds_acc": "PDS000044593.49",
       "tightest_human_min_same": null
     },
     "PDS000044601.3": {
@@ -65609,16 +65611,16 @@
       "pds_acc": "PDS000105096.1",
       "tightest_human_min_same": null
     },
-    "PDS000105097.2": {
+    "PDS000105097.3": {
       "human_pdt_accs": [
         "PDT000269732.2",
-        "PDT001252320.1"
+        "PDT003262611.1"
       ],
       "latest_collection": "2021-08-19",
       "n_human": 2,
       "n_nonhuman": 0,
       "nonhuman_pdt_accs": [],
-      "pds_acc": "PDS000105097.2",
+      "pds_acc": "PDS000105097.3",
       "tightest_human_min_same": null
     },
     "PDS000105098.4": {
@@ -84671,7 +84673,7 @@
     }
   },
   "pathogen": "Listeria",
-  "pdg_release": "PDG000000001.4759",
+  "pdg_release": "PDG000000001.4762",
   "version": 1,
-  "written_at": "2026-06-24T11:43:01.626752Z"
+  "written_at": "2026-06-25T11:37:07.462077Z"
 }
