@@ -57543,7 +57543,7 @@
       "pds_acc": "PDS000070313.1",
       "tightest_human_min_same": null
     },
-    "PDS000070713.38": {
+    "PDS000070713.39": {
       "human_pdt_accs": [
         "PDT000114127.1",
         "PDT000114134.1",
@@ -57607,10 +57607,11 @@
         "PDT003072993.1",
         "PDT003073031.1",
         "PDT003073087.1",
-        "PDT003255356.1"
+        "PDT003255356.1",
+        "PDT003265864.1"
       ],
       "latest_collection": "2026-01-01",
-      "n_human": 63,
+      "n_human": 64,
       "n_nonhuman": 15,
       "nonhuman_pdt_accs": [
         "PDT000140167.2",
@@ -57629,7 +57630,7 @@
         "PDT001206890.1",
         "PDT001415430.1"
       ],
-      "pds_acc": "PDS000070713.38",
+      "pds_acc": "PDS000070713.39",
       "tightest_human_min_same": null
     },
     "PDS000070714.4": {
@@ -68274,13 +68275,14 @@
       "human_pdt_accs": [
         "PDT001589986.1",
         "PDT002361477.1",
+        "PDT002553097.1",
         "PDT002613682.1",
         "PDT002976699.1",
         "PDT003140741.1",
         "PDT003140742.1"
       ],
       "latest_collection": "2025-02-01",
-      "n_human": 6,
+      "n_human": 7,
       "n_nonhuman": 8,
       "nonhuman_pdt_accs": [
         "PDT002639767.1",
@@ -74970,15 +74972,16 @@
       "pds_acc": "PDS000189881.2",
       "tightest_human_min_same": null
     },
-    "PDS000189978.2": {
+    "PDS000189978.3": {
       "human_pdt_accs": [
-        "PDT002278240.1"
+        "PDT002278240.1",
+        "PDT003265863.1"
       ],
-      "latest_collection": "2025-01-01",
-      "n_human": 1,
+      "latest_collection": "2026-01-01",
+      "n_human": 2,
       "n_nonhuman": 0,
       "nonhuman_pdt_accs": [],
-      "pds_acc": "PDS000189978.2",
+      "pds_acc": "PDS000189978.3",
       "tightest_human_min_same": null
     },
     "PDS000190033.2": {
@@ -76567,11 +76570,12 @@
     },
     "PDS000227464.1": {
       "human_pdt_accs": [
+        "PDT002464024.1",
         "PDT002731820.1",
         "PDT002731847.1"
       ],
       "latest_collection": "2025-01-01",
-      "n_human": 2,
+      "n_human": 3,
       "n_nonhuman": 0,
       "nonhuman_pdt_accs": [],
       "pds_acc": "PDS000227464.1",
@@ -84712,7 +84716,7 @@
     }
   },
   "pathogen": "Listeria",
-  "pdg_release": "PDG000000001.4767",
+  "pdg_release": "PDG000000001.4768",
   "version": 1,
-  "written_at": "2026-06-27T10:57:35.933426Z"
+  "written_at": "2026-06-28T11:03:54.133087Z"
 }
