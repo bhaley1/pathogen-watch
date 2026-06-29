@@ -1,0 +1,77 @@
+NCBI Pathogen Detection — Daily Alert Digest
+Run date: 2026-06-29
+Total new events: 0
+========================================================================
+
+### Salmonella
+------------------------------------------------------------------------
+No new alert events.
+
+### STEC
+------------------------------------------------------------------------
+No new alert events.
+
+### Listeria
+------------------------------------------------------------------------
+No new alert events.
+
+ACTIVE MIXED CLUSTERS (50 shown, most-recent first):
+  PDS000038737.12: 10 human / 7 nonhuman; tightest human gap: n/a; latest: 2026-06-02; sources: RTE Product, Raw Pet Food - Beef, Wastewater influent, swab; geo: USA
+  PDS000045795.6: 4 human / 3 nonhuman; tightest human gap: n/a; latest: 2026-06-02; sources: Raw Pet Food - Beef, environmental swab, produce farm drag swab; geo: USA
+  PDS000241110.17: 13 human / 38 nonhuman; tightest human gap: n/a; latest: 2026-06-02; sources: Cheese: Soft Ricotta Cheese, Requeson (soft ricotta), environmental swab, food (+1 more); geo: USA
+  PDS000024856.308: 548 human / 511 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Butchery_150, Chicken wing, Chilled Atlantic Salmon, Deli Sink, 1-Basin, Interior (FCS) (+112 more); geo: Australia, Canada, Chile, China, Costa Rica (+18)
+  PDS000032941.252: 252 human / 393 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Agaricus bisporus production chain, Bos taurus, Cold smoked salmon, Cow feces (+72 more); geo: Australia, Austria, Belgium, Canada, Chile (+24)
+  PDS000024352.130: 36 human / 217 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Butchery_13, Butchery_30, Food products, Food-Meat (+21 more); geo: Austria, Belgium, Canada, Denmark, Germany (+11)
+  PDS000025311.491: 853 human / 1268 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Arion vulgaris, Bos taurus, Caged livestock truck, Camenbert 50+ (+191 more); geo: Armenia, Australia, Austria, Belgium, Brazil (+41)
+  PDS000024708.185: 193 human / 176 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Black Olive Sliced, Bos taurus, Cow feces, Dairy barn (+46 more); geo: Austria, Belgium, China, Costa Rica, Denmark (+22)
+  PDS000024430.82: 136 human / 63 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Cheese rind, Floor Drain, Food processing environment, Food products (+15 more); geo: Belgium, Denmark, France, Germany, Ireland (+7)
+  PDS000041947.177: 340 human / 146 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Environ, Food processing environment, Food products, Food-chicken (+18 more); geo: Australia, Belgium, Denmark, Finland, France (+17)
+  PDS000011656.8: 7 human / 3 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: food; geo: Ireland, Switzerland, United Kingdom
+  PDS000036645.101: 10 human / 142 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Food products, environmental, food, food processing environment (+4 more); geo: Belgium, Denmark, Germany, Italy, Netherlands (+2)
+  PDS000044451.21: 3 human / 24 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: environmental, food; geo: United Kingdom
+  PDS000070306.13: 10 human / 15 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Agaricus bisporus production chain, environmental, food, turkey (+1 more); geo: Belgium, Germany, Netherlands, Not Provided, United Kingdom
+  PDS000217092.2: 2 human / 2 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: food; geo: United Kingdom
+  PDS000227030.2: 1 human / 4 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: River; geo: United Kingdom
+  PDS000026028.13: 4 human / 16 nonhuman; tightest human gap: n/a; latest: 2026-05-19; sources: Product-RTE-Fully Cooked, Diced/Shredded-Chicken, Raw Chicken Medley, comminuted beef, environmental swab (+11 more); geo: USA
+  PDS000000337.71: 37 human / 56 nonhuman; tightest human gap: n/a; latest: 2026-05-18; sources: Flammulina velutipes (enoki mushroom), Food animal feed, Solid - Food; Food; Fish and Seafood Products; Heat processed - Cooked fish; Cooked, caprine (+13 more); geo: Australia, Canada, Denmark, Germany, Japan (+4)
+  PDS000065054.12: 9 human / 6 nonhuman; tightest human gap: n/a; latest: 2026-05-11; sources: frozen raw dog food, lung, milk, potato; geo: Mexico, USA
+  PDS000000314.99: 67 human / 32 nonhuman; tightest human gap: n/a; latest: 2026-05-11; sources: Environment, Environmental: food-contact surface, Frozen raw beef pet food, Pet Food (+14 more); geo: Mexico, Switzerland, USA, United Arab Emirates
+  PDS000003173.120: 120 human / 29 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Raw Cow Milk, Raw Meat, Wastewater influent, Whole Red Cabbage (+14 more); geo: Sweden, USA
+  PDS000000366.720: 206 human / 1992 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Butchery_107, Butchery_18, Butchery_21, Butchery_58 (+370 more); geo: Australia, Canada, China, Costa Rica, Germany (+11)
+  PDS000024645.271: 67 human / 1009 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Butter sample from the Republic of Moldavia, Coldstore_1, Coldstore_5, Dairy (+101 more); geo: Australia, Austria, Belgium, Brazil, Canada (+28)
+  PDS000003244.107: 63 human / 105 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Basa fillet, Environment, Environmental: food-contact surface, Fish fillet (+22 more); geo: Australia, Belgium, Canada, China, Denmark (+14)
+  PDS000024682.219: 856 human / 226 nonhuman; tightest human gap: n/a; latest: 2026-05-01; sources: Arion vulgaris, Cow feces, Food processing environment, Food products (+35 more); geo: Belgium, Bulgaria, Canada, Cyprus, Denmark (+20)
+
+### Campylobacter
+------------------------------------------------------------------------
+No new alert events.
+
+ACTIVE MIXED CLUSTERS (182 shown, most-recent first):
+  PDS000263550.4: 100 human / 95 nonhuman; tightest human gap: n/a; latest: 2026-06-12; sources: Animal-Calf-Non Formula-fed Veal (cecal), Animal-Cattle-Beef Cow (cecal), Animal-Cattle-Dairy Cow (cecal), Animal-Cattle-Heifer (cecal) (+18 more); geo: USA
+  PDS000021221.596: 654 human / 210 nonhuman; tightest human gap: n/a; latest: 2026-06-10; sources: Animal-Cattle-Beef Cow (cecal), Animal-Cattle-Dairy Cow (cecal), Animal-Chicken-Heavy Fowl, Animal-Chicken-Young Chicken (cecal) (+33 more); geo: Canada, Not Provided, USA, United Kingdom
+  PDS000066839.45: 21 human / 28 nonhuman; tightest human gap: n/a; latest: 2026-06-10; sources: Animal-Chicken-Young Chicken (cecal), Nonintact Chicken, animal-chicken-young chicken, chicken - young chicken carcass rinse (post-chill) (+3 more); geo: USA
+  PDS000180622.10: 10 human / 1 nonhuman; tightest human gap: n/a; latest: 2026-06-10; sources: meat; geo: France, Germany, USA, United Kingdom
+  PDS000020997.152: 121 human / 47 nonhuman; tightest human gap: n/a; latest: 2026-06-09; sources: Animal-Chicken-Heavy Fowl, Animal-Chicken-Young Chicken (cecal), Animal-Turkey-Young Turkey (cecal), Chicken Heart (+12 more); geo: Canada, USA
+  PDS000244841.3: 205 human / 258 nonhuman; tightest human gap: n/a; latest: 2026-06-08; sources: Abomasal fluid, Animal-Calf-Bob Veal (cecal), Animal-Calf-Non Formula-fed Veal (cecal), Animal-Cattle-Beef Cow (cecal) (+58 more); geo: Canada, Not Provided, USA
+  PDS000238110.5: 58 human / 60 nonhuman; tightest human gap: n/a; latest: 2026-06-08; sources: Animal-Cattle-Beef Cow (cecal), Animal-Cattle-Dairy Cow (cecal), Animal-Cattle-Heifer (cecal), Animal-Cattle-Steer (cecal) (+18 more); geo: Canada, Not Provided, USA
+  PDS000099820.6: 13 human / 30 nonhuman; tightest human gap: n/a; latest: 2026-06-08; sources: Animal-Cattle-Dairy Cow (cecal), Animal-Cattle-Steer (cecal), animal-cattle-dairy cow, animal-cattle-heifer (+2 more); geo: USA
+  PDS000022610.171: 164 human / 44 nonhuman; tightest human gap: n/a; latest: 2026-06-08; sources: Animal-Chicken-Young Chicken (cecal), Canine, Canine Feces, Nonintact Chicken (+8 more); geo: Not Provided, USA
+  PDS000021796.147: 161 human / 41 nonhuman; tightest human gap: n/a; latest: 2026-06-08; sources: Animal-Cattle-Steer (cecal), Animal-Chicken-Young Chicken (cecal), Animal-Goat (cecal), Animal-Sheep-Mature Sheep (cecal) (+12 more); geo: USA
+  PDS000267195.1: 1 human / 1 nonhuman; tightest human gap: n/a; latest: 2026-06-08; sources: animal-cattle-heifer; geo: USA
+  PDS000252953.2: 2 human / 6 nonhuman; tightest human gap: n/a; latest: 2026-06-08; sources: broiler; geo: USA, Uganda
+  PDS000148279.2: 4 human / 1 nonhuman; tightest human gap: n/a; latest: 2026-06-07; sources: Oldman River Watershed; geo: Canada, USA
+  PDS000260094.21: 398 human / 384 nonhuman; tightest human gap: n/a; latest: 2026-06-05; sources: Animal-Calf-Bob Veal (cecal), Animal-Calf-Non Formula-fed Veal, Animal-Cattle-Beef Cow (cecal), Animal-Cattle-Dairy Cow (cecal) (+40 more); geo: Canada, USA
+  PDS000267087.1: 124 human / 261 nonhuman; tightest human gap: n/a; latest: 2026-06-05; sources: Animal-Chicken-Young Chicken (cecal), Animal-Turkey-Young Turkey, CHICKEN HEART, CHICKEN LIVER (+25 more); geo: Canada, Not Provided, USA
+  PDS000264701.3: 23 human / 37 nonhuman; tightest human gap: n/a; latest: 2026-06-04; sources: Animal-Cattle-Dairy Cow (cecal), Animal-Cattle-Heifer (cecal), Animal-Cattle-Steer (cecal), Animal-Goat (+4 more); geo: Not Provided, USA
+  PDS000232095.3: 5 human / 2 nonhuman; tightest human gap: n/a; latest: 2026-06-04; sources: chicken - young chicken carcass rinse (post-chill); geo: USA
+  PDS000000173.53: 49 human / 33 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Gallus gallus, animal, food; geo: USA, United Kingdom
+  PDS000254379.33: 499 human / 262 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Animal-Calf-Non Formula-fed Veal (cecal), Animal-Cattle-Dairy Cow (cecal), Animal-Cattle-Heifer (cecal), Animal-Cattle-Steer (cecal) (+49 more); geo: Austria, Belgium, Denmark, Finland, France (+12)
+  PDS000254378.8: 313 human / 97 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Chicken at slaugther, Chicken caeca, Poultry, Poultry meat (+14 more); geo: Belgium, Denmark, Egypt, France, Germany (+8)
+  PDS000022755.91: 65 human / 59 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Avian, Retail chicken, chicken, food (+2 more); geo: Denmark, France, Ireland, USA, United Kingdom
+  PDS000245955.34: 582 human / 298 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Avian, Broiler_chickens, Chicken caeca, Chicken environment (+20 more); geo: Belgium, Denmark, Finland, France, Germany (+9)
+  PDS000022602.87: 94 human / 41 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Avian, Chicken caeca, Transport crates, cattle_dairy (+6 more); geo: Denmark, Finland, France, Germany, Ireland (+5)
+  PDS000046577.69: 74 human / 21 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Animal-Chicken-Young Chicken (cecal), Animal-Turkey-Young Turkey (cecal), Gallus gallus, Poultry (+12 more); geo: Belgium, Croatia, Denmark, Egypt, France (+8)
+  PDS000021274.104: 220 human / 34 nonhuman; tightest human gap: n/a; latest: 2026-06-01; sources: Avian, Chicken caeca, Chicken environment, Gallus gallus (+15 more); geo: Denmark, Finland, France, Ireland, Japan (+6)
+
+========================================================================
+Generated by pathogen-alerts. Source: NCBI Pathogen Detection.
