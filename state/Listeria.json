@@ -621,7 +621,7 @@
       "pds_acc": "PDS000000297.14",
       "tightest_human_min_same": null
     },
-    "PDS000000299.13": {
+    "PDS000000299.14": {
       "human_pdt_accs": [
         "PDT000029581.3",
         "PDT000035536.3",
@@ -637,10 +637,11 @@
         "PDT001822632.1",
         "PDT001955905.1",
         "PDT002894143.1",
-        "PDT002944973.1"
+        "PDT002944973.1",
+        "PDT003277322.1"
       ],
-      "latest_collection": "2020-07-01",
-      "n_human": 15,
+      "latest_collection": "2023-01-10",
+      "n_human": 16,
       "n_nonhuman": 8,
       "nonhuman_pdt_accs": [
         "PDT000113111.1",
@@ -652,7 +653,7 @@
         "PDT000949802.1",
         "PDT000949941.1"
       ],
-      "pds_acc": "PDS000000299.13",
+      "pds_acc": "PDS000000299.14",
       "tightest_human_min_same": null
     },
     "PDS000000301.27": {
@@ -1397,7 +1398,7 @@
       "pds_acc": "PDS000000335.37",
       "tightest_human_min_same": null
     },
-    "PDS000000337.71": {
+    "PDS000000337.72": {
       "human_pdt_accs": [
         "PDT000040089.2",
         "PDT000041176.2",
@@ -1435,10 +1436,11 @@
         "PDT002639776.1",
         "PDT002677619.1",
         "PDT002893233.1",
-        "PDT003209678.1"
+        "PDT003209678.1",
+        "PDT003278178.1"
       ],
       "latest_collection": "2026-05-18",
-      "n_human": 37,
+      "n_human": 38,
       "n_nonhuman": 56,
       "nonhuman_pdt_accs": [
         "PDT000126216.2",
@@ -1498,7 +1500,7 @@
         "PDT002889638.1",
         "PDT003243260.1"
       ],
-      "pds_acc": "PDS000000337.71",
+      "pds_acc": "PDS000000337.72",
       "tightest_human_min_same": null
     },
     "PDS000000357.6": {
@@ -1538,7 +1540,7 @@
       "pds_acc": "PDS000000361.46",
       "tightest_human_min_same": null
     },
-    "PDS000000366.721": {
+    "PDS000000366.722": {
       "human_pdt_accs": [
         "PDT000001112.5",
         "PDT000031702.26",
@@ -1745,10 +1747,12 @@
         "PDT002898160.1",
         "PDT003159328.1",
         "PDT003164097.1",
-        "PDT003168708.1"
+        "PDT003168708.1",
+        "PDT003277355.1",
+        "PDT003277356.1"
       ],
       "latest_collection": "2026-05-01",
-      "n_human": 206,
+      "n_human": 208,
       "n_nonhuman": 1991,
       "nonhuman_pdt_accs": [
         "PDT000000909.4",
@@ -3743,7 +3747,7 @@
         "PDT003239446.1",
         "PDT003245553.1"
       ],
-      "pds_acc": "PDS000000366.721",
+      "pds_acc": "PDS000000366.722",
       "tightest_human_min_same": null
     },
     "PDS000000367.151": {
@@ -5495,7 +5499,7 @@
       "pds_acc": "PDS000003109.17",
       "tightest_human_min_same": null
     },
-    "PDS000003117.30": {
+    "PDS000003117.31": {
       "human_pdt_accs": [
         "PDT000034720.3",
         "PDT000233835.1",
@@ -5509,10 +5513,11 @@
         "PDT001923181.1",
         "PDT002267312.1",
         "PDT002493303.1",
-        "PDT002493304.1"
+        "PDT002493304.1",
+        "PDT003277208.1"
       ],
       "latest_collection": "2022-10-01",
-      "n_human": 13,
+      "n_human": 14,
       "n_nonhuman": 16,
       "nonhuman_pdt_accs": [
         "PDT000126162.2",
@@ -5532,7 +5537,7 @@
         "PDT002267625.1",
         "PDT002871707.1"
       ],
-      "pds_acc": "PDS000003117.30",
+      "pds_acc": "PDS000003117.31",
       "tightest_human_min_same": null
     },
     "PDS000003126.7": {
@@ -6801,7 +6806,7 @@
       "pds_acc": "PDS000003223.15",
       "tightest_human_min_same": null
     },
-    "PDS000003225.158": {
+    "PDS000003225.159": {
       "human_pdt_accs": [
         "PDT000000083.3",
         "PDT000037828.3",
@@ -6947,10 +6952,11 @@
         "PDT002983108.1",
         "PDT003026721.1",
         "PDT003042169.1",
-        "PDT003245577.1"
+        "PDT003245577.1",
+        "PDT003278098.1"
       ],
       "latest_collection": "2026-02-10",
-      "n_human": 145,
+      "n_human": 146,
       "n_nonhuman": 54,
       "nonhuman_pdt_accs": [
         "PDT000053740.4",
@@ -7008,10 +7014,10 @@
         "PDT003130739.1",
         "PDT003156932.1"
       ],
-      "pds_acc": "PDS000003225.158",
+      "pds_acc": "PDS000003225.159",
       "tightest_human_min_same": null
     },
-    "PDS000003232.79": {
+    "PDS000003232.80": {
       "human_pdt_accs": [
         "PDT000037832.2",
         "PDT000041138.2",
@@ -7077,10 +7083,11 @@
         "PDT003231452.1",
         "PDT003237797.1",
         "PDT003253060.1",
-        "PDT003267794.1"
+        "PDT003267794.1",
+        "PDT003277565.1"
       ],
       "latest_collection": "2026-02-22",
-      "n_human": 65,
+      "n_human": 66,
       "n_nonhuman": 13,
       "nonhuman_pdt_accs": [
         "PDT000030590.4",
@@ -7097,10 +7104,10 @@
         "PDT001091019.1",
         "PDT002403609.1"
       ],
-      "pds_acc": "PDS000003232.79",
+      "pds_acc": "PDS000003232.80",
       "tightest_human_min_same": null
     },
-    "PDS000003235.78": {
+    "PDS000003235.79": {
       "human_pdt_accs": [
         "PDT000000693.3",
         "PDT000002747.3",
@@ -7130,10 +7137,23 @@
         "PDT002974935.1",
         "PDT002974951.1",
         "PDT002974955.1",
-        "PDT002974962.1"
+        "PDT002974962.1",
+        "PDT003277176.1",
+        "PDT003277213.1",
+        "PDT003277265.1",
+        "PDT003277331.1",
+        "PDT003277364.1",
+        "PDT003277380.1",
+        "PDT003277382.1",
+        "PDT003277443.1",
+        "PDT003277472.1",
+        "PDT003277473.1",
+        "PDT003277479.1",
+        "PDT003277489.1",
+        "PDT003277496.1"
       ],
       "latest_collection": "2025-04-01",
-      "n_human": 29,
+      "n_human": 42,
       "n_nonhuman": 120,
       "nonhuman_pdt_accs": [
         "PDT000000958.4",
@@ -7257,7 +7277,7 @@
         "PDT003213470.1",
         "PDT003213471.1"
       ],
-      "pds_acc": "PDS000003235.78",
+      "pds_acc": "PDS000003235.79",
       "tightest_human_min_same": null
     },
     "PDS000003239.5": {
@@ -8522,7 +8542,7 @@
       "pds_acc": "PDS000003342.11",
       "tightest_human_min_same": null
     },
-    "PDS000003348.95": {
+    "PDS000003348.96": {
       "human_pdt_accs": [
         "PDT000001713.4",
         "PDT000062691.2",
@@ -8580,10 +8600,11 @@
         "PDT002974954.1",
         "PDT002974956.1",
         "PDT003069640.1",
-        "PDT003156537.1"
+        "PDT003156537.1",
+        "PDT003277190.1"
       ],
       "latest_collection": "2026-02-01",
-      "n_human": 57,
+      "n_human": 58,
       "n_nonhuman": 41,
       "nonhuman_pdt_accs": [
         "PDT000251286.1",
@@ -8628,10 +8649,10 @@
         "PDT003215375.1",
         "PDT003216349.1"
       ],
-      "pds_acc": "PDS000003348.95",
+      "pds_acc": "PDS000003348.96",
       "tightest_human_min_same": null
     },
-    "PDS000003350.32": {
+    "PDS000003350.33": {
       "human_pdt_accs": [
         "PDT000037840.2",
         "PDT000044970.2",
@@ -8664,10 +8685,13 @@
         "PDT001451957.1",
         "PDT001452006.1",
         "PDT001676298.1",
-        "PDT002275380.1"
+        "PDT002275380.1",
+        "PDT003277271.1",
+        "PDT003277374.1",
+        "PDT003277465.1"
       ],
-      "latest_collection": "2024-05-08",
-      "n_human": 32,
+      "latest_collection": "2024-11-28",
+      "n_human": 35,
       "n_nonhuman": 25,
       "nonhuman_pdt_accs": [
         "PDT000085353.2",
@@ -8696,7 +8720,7 @@
         "PDT002316497.1",
         "PDT002316502.1"
       ],
-      "pds_acc": "PDS000003350.32",
+      "pds_acc": "PDS000003350.33",
       "tightest_human_min_same": null
     },
     "PDS000003351.16": {
@@ -10342,7 +10366,7 @@
       "pds_acc": "PDS000006341.8",
       "tightest_human_min_same": null
     },
-    "PDS000006382.133": {
+    "PDS000006382.134": {
       "human_pdt_accs": [
         "PDT000195157.2",
         "PDT000367683.1",
@@ -10438,10 +10462,11 @@
         "PDT003153761.1",
         "PDT003199425.1",
         "PDT003240275.1",
-        "PDT003254911.1"
+        "PDT003254911.1",
+        "PDT003277449.1"
       ],
       "latest_collection": "2026-03-01",
-      "n_human": 95,
+      "n_human": 96,
       "n_nonhuman": 163,
       "nonhuman_pdt_accs": [
         "PDT000191333.2",
@@ -10608,7 +10633,7 @@
         "PDT003093950.1",
         "PDT003203257.1"
       ],
-      "pds_acc": "PDS000006382.133",
+      "pds_acc": "PDS000006382.134",
       "tightest_human_min_same": null
     },
     "PDS000006503.10": {
@@ -11214,6 +11239,35 @@
         "PDT001830207.1"
       ],
       "pds_acc": "PDS000011663.11",
+      "tightest_human_min_same": null
+    },
+    "PDS000011669.11": {
+      "human_pdt_accs": [
+        "PDT003277249.1"
+      ],
+      "latest_collection": "2022-01-01",
+      "n_human": 1,
+      "n_nonhuman": 17,
+      "nonhuman_pdt_accs": [
+        "PDT000248376.1",
+        "PDT000248381.1",
+        "PDT000248420.1",
+        "PDT000251091.1",
+        "PDT000251179.1",
+        "PDT000251203.1",
+        "PDT000474882.1",
+        "PDT000475201.1",
+        "PDT000475355.1",
+        "PDT001538103.1",
+        "PDT001538104.1",
+        "PDT001826605.1",
+        "PDT002442237.1",
+        "PDT002442241.1",
+        "PDT002442249.1",
+        "PDT002442250.1",
+        "PDT002442256.1"
+      ],
+      "pds_acc": "PDS000011669.11",
       "tightest_human_min_same": null
     },
     "PDS000011670.11": {
@@ -16276,17 +16330,19 @@
       "pds_acc": "PDS000024451.7",
       "tightest_human_min_same": null
     },
-    "PDS000024453.5": {
+    "PDS000024453.6": {
       "human_pdt_accs": [
         "PDT000065856.2",
         "PDT000144700.2",
-        "PDT000355860.1"
+        "PDT000355860.1",
+        "PDT003277192.1",
+        "PDT003277229.1"
       ],
-      "latest_collection": "2018-07-01",
-      "n_human": 3,
+      "latest_collection": "2019-12-27",
+      "n_human": 5,
       "n_nonhuman": 0,
       "nonhuman_pdt_accs": [],
-      "pds_acc": "PDS000024453.5",
+      "pds_acc": "PDS000024453.6",
       "tightest_human_min_same": null
     },
     "PDS000024454.1": {
@@ -18232,7 +18288,7 @@
       "pds_acc": "PDS000024644.3",
       "tightest_human_min_same": null
     },
-    "PDS000024645.274": {
+    "PDS000024645.275": {
       "human_pdt_accs": [
         "PDT000065734.2",
         "PDT000153610.2",
@@ -18300,10 +18356,11 @@
         "PDT002944949.1",
         "PDT002944950.1",
         "PDT003146625.1",
-        "PDT003269912.1"
+        "PDT003269912.1",
+        "PDT003277477.1"
       ],
       "latest_collection": "2026-06-01",
-      "n_human": 67,
+      "n_human": 68,
       "n_nonhuman": 1025,
       "nonhuman_pdt_accs": [
         "PDT000000912.5",
@@ -19332,7 +19389,7 @@
         "PDT003272967.1",
         "PDT003272975.1"
       ],
-      "pds_acc": "PDS000024645.274",
+      "pds_acc": "PDS000024645.275",
       "tightest_human_min_same": null
     },
     "PDS000024646.34": {
@@ -19858,7 +19915,7 @@
       "pds_acc": "PDS000024653.10",
       "tightest_human_min_same": null
     },
-    "PDS000024656.320": {
+    "PDS000024656.321": {
       "human_pdt_accs": [
         "PDT000097660.3",
         "PDT000153544.2",
@@ -19950,10 +20007,11 @@
         "PDT002823959.1",
         "PDT002845067.1",
         "PDT002978315.1",
-        "PDT003073042.1"
+        "PDT003073042.1",
+        "PDT003277211.1"
       ],
       "latest_collection": "2026-04-01",
-      "n_human": 91,
+      "n_human": 92,
       "n_nonhuman": 991,
       "nonhuman_pdt_accs": [
         "PDT000000963.3",
@@ -20948,10 +21006,10 @@
         "PDT003207399.1",
         "PDT003216319.1"
       ],
-      "pds_acc": "PDS000024656.320",
+      "pds_acc": "PDS000024656.321",
       "tightest_human_min_same": null
     },
-    "PDS000024657.95": {
+    "PDS000024657.96": {
       "human_pdt_accs": [
         "PDT000035793.3",
         "PDT000035807.3",
@@ -21018,10 +21076,15 @@
         "PDT002845255.1",
         "PDT002861782.1",
         "PDT002861799.1",
-        "PDT002861800.1"
+        "PDT002861800.1",
+        "PDT003277186.1",
+        "PDT003277241.1",
+        "PDT003277290.1",
+        "PDT003277325.1",
+        "PDT003277398.1"
       ],
       "latest_collection": "2025-07-01",
-      "n_human": 66,
+      "n_human": 71,
       "n_nonhuman": 94,
       "nonhuman_pdt_accs": [
         "PDT000035799.3",
@@ -21119,7 +21182,7 @@
         "PDT002769090.1",
         "PDT002833210.1"
       ],
-      "pds_acc": "PDS000024657.95",
+      "pds_acc": "PDS000024657.96",
       "tightest_human_min_same": null
     },
     "PDS000024658.9": {
@@ -21342,7 +21405,7 @@
       "pds_acc": "PDS000024680.4",
       "tightest_human_min_same": null
     },
-    "PDS000024682.222": {
+    "PDS000024682.223": {
       "human_pdt_accs": [
         "PDT000047029.5",
         "PDT000095128.2",
@@ -22200,10 +22263,16 @@
         "PDT003207382.1",
         "PDT003247541.1",
         "PDT003254907.1",
-        "PDT003272970.1"
+        "PDT003272970.1",
+        "PDT003277233.1",
+        "PDT003277251.1",
+        "PDT003277306.1",
+        "PDT003277312.1",
+        "PDT003277372.1",
+        "PDT003277440.1"
       ],
       "latest_collection": "2026-06-01",
-      "n_human": 857,
+      "n_human": 863,
       "n_nonhuman": 226,
       "nonhuman_pdt_accs": [
         "PDT000126027.2",
@@ -22433,7 +22502,7 @@
         "PDT003268193.1",
         "PDT003268203.1"
       ],
-      "pds_acc": "PDS000024682.222",
+      "pds_acc": "PDS000024682.223",
       "tightest_human_min_same": null
     },
     "PDS000024683.25": {
@@ -25416,7 +25485,7 @@
       "pds_acc": "PDS000024852.13",
       "tightest_human_min_same": null
     },
-    "PDS000024856.309": {
+    "PDS000024856.310": {
       "human_pdt_accs": [
         "PDT000000020.3",
         "PDT000000679.3",
@@ -25966,10 +26035,15 @@
         "PDT003254910.1",
         "PDT003261185.1",
         "PDT003261291.1",
-        "PDT003270553.1"
+        "PDT003270553.1",
+        "PDT003277179.1",
+        "PDT003277223.1",
+        "PDT003277261.1",
+        "PDT003277396.1",
+        "PDT003277481.1"
       ],
       "latest_collection": "2026-06-01",
-      "n_human": 549,
+      "n_human": 554,
       "n_nonhuman": 511,
       "nonhuman_pdt_accs": [
         "PDT000000902.4",
@@ -26484,7 +26558,7 @@
         "PDT003258494.1",
         "PDT003260883.1"
       ],
-      "pds_acc": "PDS000024856.309",
+      "pds_acc": "PDS000024856.310",
       "tightest_human_min_same": null
     },
     "PDS000024857.6": {
@@ -26843,7 +26917,7 @@
       "pds_acc": "PDS000024897.10",
       "tightest_human_min_same": null
     },
-    "PDS000024900.181": {
+    "PDS000024900.182": {
       "human_pdt_accs": [
         "PDT000086849.2",
         "PDT000097806.3",
@@ -26917,10 +26991,17 @@
         "PDT002845081.1",
         "PDT002938171.1",
         "PDT003081592.1",
-        "PDT003180711.1"
+        "PDT003180711.1",
+        "PDT003277189.1",
+        "PDT003277256.1",
+        "PDT003277282.1",
+        "PDT003277421.1",
+        "PDT003277457.1",
+        "PDT003277458.1",
+        "PDT003277474.1"
       ],
       "latest_collection": "2026-04-01",
-      "n_human": 73,
+      "n_human": 80,
       "n_nonhuman": 524,
       "nonhuman_pdt_accs": [
         "PDT000050634.2",
@@ -27448,7 +27529,7 @@
         "PDT002992553.1",
         "PDT003017757.1"
       ],
-      "pds_acc": "PDS000024900.181",
+      "pds_acc": "PDS000024900.182",
       "tightest_human_min_same": null
     },
     "PDS000024902.8": {
@@ -32653,15 +32734,26 @@
       "pds_acc": "PDS000025160.16",
       "tightest_human_min_same": null
     },
-    "PDS000025161.16": {
+    "PDS000025161.17": {
       "human_pdt_accs": [
         "PDT000199222.2",
         "PDT000295554.2",
         "PDT001011108.1",
-        "PDT002861780.1"
+        "PDT002861780.1",
+        "PDT003277184.1",
+        "PDT003277193.1",
+        "PDT003277197.1",
+        "PDT003277199.1",
+        "PDT003277237.1",
+        "PDT003277239.1",
+        "PDT003277262.1",
+        "PDT003277272.1",
+        "PDT003277286.1",
+        "PDT003277391.1",
+        "PDT003277438.1"
       ],
       "latest_collection": "2024-01-01",
-      "n_human": 4,
+      "n_human": 15,
       "n_nonhuman": 50,
       "nonhuman_pdt_accs": [
         "PDT000001622.3",
@@ -32715,7 +32807,7 @@
         "PDT001674128.1",
         "PDT002542431.1"
       ],
-      "pds_acc": "PDS000025161.16",
+      "pds_acc": "PDS000025161.17",
       "tightest_human_min_same": null
     },
     "PDS000025162.3": {
@@ -33160,7 +33252,7 @@
       "pds_acc": "PDS000025191.1",
       "tightest_human_min_same": null
     },
-    "PDS000025192.45": {
+    "PDS000025192.46": {
       "human_pdt_accs": [
         "PDT000000725.3",
         "PDT000041181.2",
@@ -33236,9 +33328,9 @@
         "PDT002845077.1",
         "PDT002861870.1"
       ],
-      "latest_collection": "2025-01-01",
+      "latest_collection": "2026-01-01",
       "n_human": 73,
-      "n_nonhuman": 28,
+      "n_nonhuman": 29,
       "nonhuman_pdt_accs": [
         "PDT000044033.4",
         "PDT000217397.2",
@@ -33267,9 +33359,10 @@
         "PDT002267684.1",
         "PDT002826077.1",
         "PDT002826150.1",
-        "PDT002872395.1"
+        "PDT002872395.1",
+        "PDT003277686.1"
       ],
-      "pds_acc": "PDS000025192.45",
+      "pds_acc": "PDS000025192.46",
       "tightest_human_min_same": null
     },
     "PDS000025193.2": {
@@ -34794,7 +34887,7 @@
       "pds_acc": "PDS000025289.3",
       "tightest_human_min_same": null
     },
-    "PDS000025292.26": {
+    "PDS000025292.27": {
       "human_pdt_accs": [
         "PDT000097733.3",
         "PDT000097734.3",
@@ -34810,10 +34903,19 @@
         "PDT002015166.1",
         "PDT002015373.1",
         "PDT002015394.1",
-        "PDT002093209.1"
+        "PDT002093209.1",
+        "PDT003277225.1",
+        "PDT003277310.1",
+        "PDT003277311.1",
+        "PDT003277361.1",
+        "PDT003277383.1",
+        "PDT003277399.1",
+        "PDT003277400.1",
+        "PDT003277406.1",
+        "PDT003277450.1"
       ],
       "latest_collection": "2023-12-01",
-      "n_human": 15,
+      "n_human": 24,
       "n_nonhuman": 6,
       "nonhuman_pdt_accs": [
         "PDT000794845.1",
@@ -34823,7 +34925,7 @@
         "PDT001986124.1",
         "PDT002605829.1"
       ],
-      "pds_acc": "PDS000025292.26",
+      "pds_acc": "PDS000025292.27",
       "tightest_human_min_same": null
     },
     "PDS000025295.11": {
@@ -34867,7 +34969,7 @@
       "pds_acc": "PDS000025300.15",
       "tightest_human_min_same": null
     },
-    "PDS000025311.492": {
+    "PDS000025311.493": {
       "human_pdt_accs": [
         "PDT000025267.3",
         "PDT000045920.1",
@@ -35721,10 +35823,13 @@
         "PDT003199437.1",
         "PDT003226255.1",
         "PDT003247538.1",
-        "PDT003252089.1"
+        "PDT003252089.1",
+        "PDT003277235.1",
+        "PDT003277283.1",
+        "PDT003277502.1"
       ],
       "latest_collection": "2026-06-01",
-      "n_human": 853,
+      "n_human": 856,
       "n_nonhuman": 1269,
       "nonhuman_pdt_accs": [
         "PDT000001250.3",
@@ -36997,7 +37102,7 @@
         "PDT003263592.1",
         "PDT003268208.1"
       ],
-      "pds_acc": "PDS000025311.492",
+      "pds_acc": "PDS000025311.493",
       "tightest_human_min_same": null
     },
     "PDS000025312.7": {
@@ -39598,21 +39703,23 @@
       "pds_acc": "PDS000025471.6",
       "tightest_human_min_same": null
     },
-    "PDS000025472.5": {
+    "PDS000025472.6": {
       "human_pdt_accs": [
         "PDT000174279.2",
         "PDT000304053.3",
         "PDT000642043.1",
-        "PDT001716097.1"
+        "PDT001716097.1",
+        "PDT003277447.1",
+        "PDT003277469.1"
       ],
-      "latest_collection": "2022-03-07",
-      "n_human": 4,
+      "latest_collection": "2023-12-06",
+      "n_human": 6,
       "n_nonhuman": 2,
       "nonhuman_pdt_accs": [
         "PDT002046775.1",
         "PDT002046776.1"
       ],
-      "pds_acc": "PDS000025472.5",
+      "pds_acc": "PDS000025472.6",
       "tightest_human_min_same": null
     },
     "PDS000025473.2": {
@@ -44664,7 +44771,7 @@
       "pds_acc": "PDS000041945.13",
       "tightest_human_min_same": null
     },
-    "PDS000041947.177": {
+    "PDS000041947.178": {
       "human_pdt_accs": [
         "PDT000084854.3",
         "PDT000114791.1",
@@ -45005,10 +45112,16 @@
         "PDT003159847.1",
         "PDT003159859.1",
         "PDT003172479.1",
-        "PDT003258825.1"
+        "PDT003258825.1",
+        "PDT003277194.1",
+        "PDT003277227.1",
+        "PDT003277263.1",
+        "PDT003277373.1",
+        "PDT003277402.1",
+        "PDT003277431.1"
       ],
       "latest_collection": "2026-06-01",
-      "n_human": 340,
+      "n_human": 346,
       "n_nonhuman": 146,
       "nonhuman_pdt_accs": [
         "PDT000097775.3",
@@ -45158,7 +45271,7 @@
         "PDT003044575.1",
         "PDT003111909.1"
       ],
-      "pds_acc": "PDS000041947.177",
+      "pds_acc": "PDS000041947.178",
       "tightest_human_min_same": null
     },
     "PDS000041952.18": {
@@ -46584,6 +46697,30 @@
       "pds_acc": "PDS000044374.1",
       "tightest_human_min_same": null
     },
+    "PDS000044443.7": {
+      "human_pdt_accs": [
+        "PDT003277362.1",
+        "PDT003277412.1"
+      ],
+      "latest_collection": "2025-08-14",
+      "n_human": 2,
+      "n_nonhuman": 11,
+      "nonhuman_pdt_accs": [
+        "PDT000378113.2",
+        "PDT000378164.2",
+        "PDT001454342.1",
+        "PDT001454390.1",
+        "PDT002464626.1",
+        "PDT002481206.1",
+        "PDT002481208.1",
+        "PDT002481209.1",
+        "PDT002890617.1",
+        "PDT002944990.1",
+        "PDT002944996.1"
+      ],
+      "pds_acc": "PDS000044443.7",
+      "tightest_human_min_same": null
+    },
     "PDS000044447.4": {
       "human_pdt_accs": [
         "PDT000153818.3"
@@ -47492,7 +47629,7 @@
       "pds_acc": "PDS000044588.3",
       "tightest_human_min_same": null
     },
-    "PDS000044593.49": {
+    "PDS000044593.50": {
       "human_pdt_accs": [
         "PDT000291568.3",
         "PDT000294349.2",
@@ -47527,10 +47664,11 @@
         "PDT003154805.1",
         "PDT003171784.1",
         "PDT003262607.1",
-        "PDT003262608.1"
+        "PDT003262608.1",
+        "PDT003277243.1"
       ],
       "latest_collection": "2026-04-01",
-      "n_human": 34,
+      "n_human": 35,
       "n_nonhuman": 33,
       "nonhuman_pdt_accs": [
         "PDT000384674.2",
@@ -47567,7 +47705,7 @@
         "PDT002872381.1",
         "PDT003011399.1"
       ],
-      "pds_acc": "PDS000044593.49",
+      "pds_acc": "PDS000044593.50",
       "tightest_human_min_same": null
     },
     "PDS000044601.3": {
@@ -50577,7 +50715,7 @@
       "pds_acc": "PDS000052746.1",
       "tightest_human_min_same": null
     },
-    "PDS000052747.10": {
+    "PDS000052747.11": {
       "human_pdt_accs": [
         "PDT000048838.2",
         "PDT000420143.2",
@@ -50593,16 +50731,17 @@
         "PDT002093128.1",
         "PDT002093210.1",
         "PDT002861810.1",
-        "PDT002861821.1"
+        "PDT002861821.1",
+        "PDT003277222.1"
       ],
       "latest_collection": "2023-07-01",
-      "n_human": 15,
+      "n_human": 16,
       "n_nonhuman": 2,
       "nonhuman_pdt_accs": [
         "PDT000137025.2",
         "PDT002267051.1"
       ],
-      "pds_acc": "PDS000052747.10",
+      "pds_acc": "PDS000052747.11",
       "tightest_human_min_same": null
     },
     "PDS000052748.1": {
@@ -52730,23 +52869,24 @@
       "pds_acc": "PDS000054089.3",
       "tightest_human_min_same": null
     },
-    "PDS000054104.5": {
+    "PDS000054104.6": {
       "human_pdt_accs": [
         "PDT000172244.2",
         "PDT002148573.1"
       ],
       "latest_collection": "2026-01-01",
       "n_human": 2,
-      "n_nonhuman": 6,
+      "n_nonhuman": 7,
       "nonhuman_pdt_accs": [
         "PDT000639161.1",
         "PDT000642684.1",
         "PDT002762644.1",
         "PDT003223121.1",
         "PDT003223133.1",
-        "PDT003223157.1"
+        "PDT003223157.1",
+        "PDT003277705.1"
       ],
-      "pds_acc": "PDS000054104.5",
+      "pds_acc": "PDS000054104.6",
       "tightest_human_min_same": null
     },
     "PDS000054163.3": {
@@ -58297,16 +58437,17 @@
       "pds_acc": "PDS000070850.1",
       "tightest_human_min_same": null
     },
-    "PDS000070855.8": {
+    "PDS000070855.9": {
       "human_pdt_accs": [
         "PDT000456786.2",
         "PDT000882252.1",
         "PDT002630122.1",
         "PDT002656686.1",
-        "PDT002845115.1"
+        "PDT002845115.1",
+        "PDT003277332.1"
       ],
       "latest_collection": "2024-01-01",
-      "n_human": 5,
+      "n_human": 6,
       "n_nonhuman": 5,
       "nonhuman_pdt_accs": [
         "PDT002246601.1",
@@ -58315,7 +58456,7 @@
         "PDT002442208.1",
         "PDT002442209.1"
       ],
-      "pds_acc": "PDS000070855.8",
+      "pds_acc": "PDS000070855.9",
       "tightest_human_min_same": null
     },
     "PDS000070862.4": {
@@ -61446,81 +61587,53 @@
       "pds_acc": "PDS000084375.1",
       "tightest_human_min_same": null
     },
-    "PDS000084508.10": {
-      "human_pdt_accs": [
-        "PDT000024399.3",
-        "PDT000171468.2",
-        "PDT000283568.2",
-        "PDT000294310.2",
-        "PDT000533586.1",
-        "PDT001189540.1",
-        "PDT001189541.1",
-        "PDT001189542.1",
-        "PDT001189549.1",
-        "PDT001189550.1",
-        "PDT001189553.1",
-        "PDT001189554.1",
-        "PDT001189558.1",
-        "PDT001189559.1",
-        "PDT001189565.1",
-        "PDT001189566.1",
-        "PDT001189567.1",
-        "PDT001189585.1",
-        "PDT001233363.1",
-        "PDT002894188.1"
-      ],
-      "latest_collection": "2021-10-21",
-      "n_human": 20,
-      "n_nonhuman": 20,
-      "nonhuman_pdt_accs": [
-        "PDT000644301.1",
-        "PDT001004183.1",
-        "PDT001004186.1",
-        "PDT001004194.1",
-        "PDT001004206.1",
-        "PDT001004236.1",
-        "PDT001004304.1",
-        "PDT001004305.1",
-        "PDT001004306.1",
-        "PDT001004311.1",
-        "PDT001004313.1",
-        "PDT001230773.1",
-        "PDT001230774.1",
-        "PDT001231168.1",
-        "PDT001269845.1",
-        "PDT001270033.1",
-        "PDT001270046.1",
-        "PDT001277238.1",
-        "PDT002316511.1",
-        "PDT002316520.1"
-      ],
-      "pds_acc": "PDS000084508.10",
-      "tightest_human_min_same": null
-    },
-    "PDS000084510.3": {
+    "PDS000084510.4": {
       "human_pdt_accs": [
         "PDT000294334.2",
-        "PDT001233364.1"
+        "PDT001233364.1",
+        "PDT003277214.1",
+        "PDT003277244.1",
+        "PDT003277245.1",
+        "PDT003277276.1",
+        "PDT003277278.1",
+        "PDT003277288.1",
+        "PDT003277318.1",
+        "PDT003277328.1",
+        "PDT003277346.1",
+        "PDT003277350.1",
+        "PDT003277386.1",
+        "PDT003277393.1",
+        "PDT003277394.1",
+        "PDT003277403.1",
+        "PDT003277405.1",
+        "PDT003277429.1",
+        "PDT003277468.1",
+        "PDT003277484.1"
       ],
-      "latest_collection": "2021-10-21",
-      "n_human": 2,
-      "n_nonhuman": 3,
+      "latest_collection": "2024-08-09",
+      "n_human": 20,
+      "n_nonhuman": 4,
       "nonhuman_pdt_accs": [
         "PDT000644302.1",
         "PDT001004189.1",
+        "PDT001004264.1",
         "PDT002316517.1"
       ],
-      "pds_acc": "PDS000084510.3",
+      "pds_acc": "PDS000084510.4",
       "tightest_human_min_same": null
     },
-    "PDS000084513.5": {
+    "PDS000084513.6": {
       "human_pdt_accs": [
         "PDT001189560.1",
         "PDT001189561.1",
-        "PDT001189568.1"
+        "PDT001189568.1",
+        "PDT003277207.1",
+        "PDT003277226.1",
+        "PDT003277301.1",
+        "PDT003277401.1"
       ],
-      "latest_collection": "2020-01-01",
-      "n_human": 3,
+      "latest_collection": "2021-10-16",
+      "n_human": 7,
       "n_nonhuman": 12,
       "nonhuman_pdt_accs": [
         "PDT001004176.1",
@@ -61536,7 +61649,22 @@
         "PDT001274797.1",
         "PDT001274804.1"
       ],
-      "pds_acc": "PDS000084513.5",
+      "pds_acc": "PDS000084513.6",
+      "tightest_human_min_same": null
+    },
+    "PDS000084516.2": {
+      "human_pdt_accs": [
+        "PDT003277330.1",
+        "PDT003277448.1"
+      ],
+      "latest_collection": "2023-02-03",
+      "n_human": 2,
+      "n_nonhuman": 2,
+      "nonhuman_pdt_accs": [
+        "PDT001004267.1",
+        "PDT001004318.1"
+      ],
+      "pds_acc": "PDS000084516.2",
       "tightest_human_min_same": null
     },
     "PDS000084616.2": {
@@ -65541,6 +65669,22 @@
       "pds_acc": "PDS000103437.1",
       "tightest_human_min_same": null
     },
+    "PDS000103533.3": {
+      "human_pdt_accs": [
+        "PDT003277451.1"
+      ],
+      "latest_collection": "2021-03-25",
+      "n_human": 1,
+      "n_nonhuman": 4,
+      "nonhuman_pdt_accs": [
+        "PDT000653168.3",
+        "PDT001231158.1",
+        "PDT001231159.1",
+        "PDT001231191.1"
+      ],
+      "pds_acc": "PDS000103533.3",
+      "tightest_human_min_same": null
+    },
     "PDS000103889.4": {
       "human_pdt_accs": [
         "PDT001235635.1"
@@ -65908,6 +66052,29 @@
         "PDT002872394.1"
       ],
       "pds_acc": "PDS000106443.6",
+      "tightest_human_min_same": null
+    },
+    "PDS000106802.4": {
+      "human_pdt_accs": [
+        "PDT003277246.1"
+      ],
+      "latest_collection": "2020-11-20",
+      "n_human": 1,
+      "n_nonhuman": 11,
+      "nonhuman_pdt_accs": [
+        "PDT001269886.1",
+        "PDT001269891.1",
+        "PDT001270075.1",
+        "PDT001270089.1",
+        "PDT001270186.1",
+        "PDT001270189.1",
+        "PDT001270195.1",
+        "PDT001270200.1",
+        "PDT001270222.1",
+        "PDT001274806.1",
+        "PDT002132695.1"
+      ],
+      "pds_acc": "PDS000106802.4",
       "tightest_human_min_same": null
     },
     "PDS000106815.3": {
@@ -84817,10 +84984,532 @@
       "nonhuman_pdt_accs": [],
       "pds_acc": "PDS000267975.1",
       "tightest_human_min_same": null
+    },
+    "PDS000268026.1": {
+      "human_pdt_accs": [
+        "PDT000024399.3",
+        "PDT000171468.2",
+        "PDT000283568.2",
+        "PDT000294310.2",
+        "PDT000533586.1",
+        "PDT001189540.1",
+        "PDT001189541.1",
+        "PDT001189542.1",
+        "PDT001189549.1",
+        "PDT001189550.1",
+        "PDT001189553.1",
+        "PDT001189554.1",
+        "PDT001189558.1",
+        "PDT001189559.1",
+        "PDT001189565.1",
+        "PDT001189566.1",
+        "PDT001189567.1",
+        "PDT001189585.1",
+        "PDT001233363.1",
+        "PDT002894188.1",
+        "PDT003277181.1",
+        "PDT003277188.1",
+        "PDT003277198.1",
+        "PDT003277202.1",
+        "PDT003277203.1",
+        "PDT003277205.1",
+        "PDT003277206.1",
+        "PDT003277210.1",
+        "PDT003277212.1",
+        "PDT003277215.1",
+        "PDT003277217.1",
+        "PDT003277218.1",
+        "PDT003277219.1",
+        "PDT003277220.1",
+        "PDT003277238.1",
+        "PDT003277247.1",
+        "PDT003277248.1",
+        "PDT003277253.1",
+        "PDT003277264.1",
+        "PDT003277269.1",
+        "PDT003277279.1",
+        "PDT003277285.1",
+        "PDT003277287.1",
+        "PDT003277293.1",
+        "PDT003277296.1",
+        "PDT003277297.1",
+        "PDT003277298.1",
+        "PDT003277299.1",
+        "PDT003277305.1",
+        "PDT003277308.1",
+        "PDT003277317.1",
+        "PDT003277319.1",
+        "PDT003277321.1",
+        "PDT003277327.1",
+        "PDT003277337.1",
+        "PDT003277352.1",
+        "PDT003277365.1",
+        "PDT003277375.1",
+        "PDT003277376.1",
+        "PDT003277381.1",
+        "PDT003277390.1",
+        "PDT003277411.1",
+        "PDT003277417.1",
+        "PDT003277422.1",
+        "PDT003277425.1",
+        "PDT003277427.1",
+        "PDT003277428.1",
+        "PDT003277446.1",
+        "PDT003277459.1",
+        "PDT003277460.1",
+        "PDT003277461.1",
+        "PDT003277482.1",
+        "PDT003277501.1"
+      ],
+      "latest_collection": "2024-08-07",
+      "n_human": 73,
+      "n_nonhuman": 25,
+      "nonhuman_pdt_accs": [
+        "PDT000644301.1",
+        "PDT001004183.1",
+        "PDT001004186.1",
+        "PDT001004194.1",
+        "PDT001004206.1",
+        "PDT001004236.1",
+        "PDT001004295.1",
+        "PDT001004304.1",
+        "PDT001004305.1",
+        "PDT001004306.1",
+        "PDT001004311.1",
+        "PDT001004313.1",
+        "PDT001230773.1",
+        "PDT001230774.1",
+        "PDT001231168.1",
+        "PDT001269845.1",
+        "PDT001269881.1",
+        "PDT001270033.1",
+        "PDT001270046.1",
+        "PDT001270068.1",
+        "PDT001270193.1",
+        "PDT001277238.1",
+        "PDT002316511.1",
+        "PDT002316520.1",
+        "PDT003164991.1"
+      ],
+      "pds_acc": "PDS000268026.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268027.1": {
+      "human_pdt_accs": [
+        "PDT003277437.1",
+        "PDT003277442.1"
+      ],
+      "latest_collection": "2023-04-22",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268027.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268028.1": {
+      "human_pdt_accs": [
+        "PDT003277284.1",
+        "PDT003277433.1",
+        "PDT003277445.1",
+        "PDT003277480.1"
+      ],
+      "latest_collection": "2023-12-07",
+      "n_human": 4,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268028.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268029.1": {
+      "human_pdt_accs": [
+        "PDT003277270.1",
+        "PDT003277326.1"
+      ],
+      "latest_collection": "2022-12-21",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268029.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268030.1": {
+      "human_pdt_accs": [
+        "PDT003277335.1",
+        "PDT003277353.1",
+        "PDT003277485.1"
+      ],
+      "latest_collection": "2024-05-05",
+      "n_human": 3,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268030.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268031.1": {
+      "human_pdt_accs": [
+        "PDT003277185.1",
+        "PDT003277338.1"
+      ],
+      "latest_collection": "2024-06-03",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268031.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268032.1": {
+      "human_pdt_accs": [
+        "PDT003277343.1",
+        "PDT003277395.1"
+      ],
+      "latest_collection": "2022-09-27",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268032.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268033.1": {
+      "human_pdt_accs": [
+        "PDT003277277.1",
+        "PDT003277348.1"
+      ],
+      "latest_collection": "2022-09-15",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268033.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268034.1": {
+      "human_pdt_accs": [
+        "PDT003277367.1",
+        "PDT003277368.1"
+      ],
+      "latest_collection": "2022-04-10",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268034.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268035.1": {
+      "human_pdt_accs": [
+        "PDT003277360.1",
+        "PDT003277363.1",
+        "PDT003277366.1",
+        "PDT003277369.1",
+        "PDT003277378.1",
+        "PDT003277379.1"
+      ],
+      "latest_collection": "2022-06-19",
+      "n_human": 6,
+      "n_nonhuman": 1,
+      "nonhuman_pdt_accs": [
+        "PDT001231161.1"
+      ],
+      "pds_acc": "PDS000268035.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268036.1": {
+      "human_pdt_accs": [
+        "PDT003277281.1",
+        "PDT003277404.1"
+      ],
+      "latest_collection": "2021-09-25",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268036.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268037.1": {
+      "human_pdt_accs": [
+        "PDT003277257.1",
+        "PDT003277267.1"
+      ],
+      "latest_collection": "2020-10-20",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268037.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268038.1": {
+      "human_pdt_accs": [
+        "PDT003277416.1"
+      ],
+      "latest_collection": "2021-07-07",
+      "n_human": 1,
+      "n_nonhuman": 1,
+      "nonhuman_pdt_accs": [
+        "PDT001004182.1"
+      ],
+      "pds_acc": "PDS000268038.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268039.1": {
+      "human_pdt_accs": [
+        "PDT003277230.1",
+        "PDT003277231.1"
+      ],
+      "latest_collection": "2021-02-15",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268039.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268040.1": {
+      "human_pdt_accs": [
+        "PDT003277232.1",
+        "PDT003277260.1",
+        "PDT003277334.1"
+      ],
+      "latest_collection": "2022-11-24",
+      "n_human": 3,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268040.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268041.1": {
+      "human_pdt_accs": [
+        "PDT003277182.1",
+        "PDT003277183.1"
+      ],
+      "latest_collection": "2019-01-01",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268041.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268042.1": {
+      "human_pdt_accs": [
+        "PDT003277200.1",
+        "PDT003277314.1",
+        "PDT003277470.1"
+      ],
+      "latest_collection": "2024-10-26",
+      "n_human": 3,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268042.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268043.1": {
+      "human_pdt_accs": [
+        "PDT003277240.1",
+        "PDT003277252.1"
+      ],
+      "latest_collection": "2020-11-17",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268043.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268044.1": {
+      "human_pdt_accs": [
+        "PDT003277493.1",
+        "PDT003277494.1"
+      ],
+      "latest_collection": "2024-02-03",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268044.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268045.1": {
+      "human_pdt_accs": [
+        "PDT003277275.1",
+        "PDT003277292.1"
+      ],
+      "latest_collection": "2020-03-10",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268045.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268046.1": {
+      "human_pdt_accs": [
+        "PDT003277407.1",
+        "PDT003277408.1"
+      ],
+      "latest_collection": "2021-08-18",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268046.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268047.1": {
+      "human_pdt_accs": [
+        "PDT001490892.1",
+        "PDT003278008.1"
+      ],
+      "latest_collection": "2026-01-01",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268047.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268048.1": {
+      "human_pdt_accs": [
+        "PDT003277201.1",
+        "PDT003277424.1"
+      ],
+      "latest_collection": "2023-08-23",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268048.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268049.1": {
+      "human_pdt_accs": [
+        "PDT003277268.1",
+        "PDT003277441.1",
+        "PDT003277476.1"
+      ],
+      "latest_collection": "2024-09-07",
+      "n_human": 3,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268049.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268050.1": {
+      "human_pdt_accs": [
+        "PDT003277228.1",
+        "PDT003277234.1"
+      ],
+      "latest_collection": "2021-02-23",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268050.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268051.1": {
+      "human_pdt_accs": [
+        "PDT003277196.1",
+        "PDT003277413.1"
+      ],
+      "latest_collection": "2023-11-09",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268051.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268052.1": {
+      "human_pdt_accs": [
+        "PDT003277180.1",
+        "PDT003277258.1",
+        "PDT003277455.1"
+      ],
+      "latest_collection": "2024-12-14",
+      "n_human": 3,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268052.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268053.1": {
+      "human_pdt_accs": [
+        "PDT003277266.1",
+        "PDT003277303.1"
+      ],
+      "latest_collection": "2020-09-23",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268053.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268054.1": {
+      "human_pdt_accs": [
+        "PDT003277471.1",
+        "PDT003277486.1"
+      ],
+      "latest_collection": "2024-10-02",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268054.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268055.1": {
+      "human_pdt_accs": [
+        "PDT003277466.1",
+        "PDT003277483.1"
+      ],
+      "latest_collection": "2024-05-27",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268055.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268056.1": {
+      "human_pdt_accs": [
+        "PDT003277221.1",
+        "PDT003277339.1",
+        "PDT003277454.1",
+        "PDT003277487.1"
+      ],
+      "latest_collection": "2024-03-14",
+      "n_human": 4,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268056.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268057.1": {
+      "human_pdt_accs": [
+        "PDT003277347.1",
+        "PDT003277415.1"
+      ],
+      "latest_collection": "2023-10-15",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268057.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268058.1": {
+      "human_pdt_accs": [
+        "PDT003277224.1",
+        "PDT003277280.1",
+        "PDT003277419.1"
+      ],
+      "latest_collection": "2023-10-11",
+      "n_human": 3,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268058.1",
+      "tightest_human_min_same": null
+    },
+    "PDS000268059.1": {
+      "human_pdt_accs": [
+        "PDT002823866.1",
+        "PDT003277439.1"
+      ],
+      "latest_collection": "2023-05-01",
+      "n_human": 2,
+      "n_nonhuman": 0,
+      "nonhuman_pdt_accs": [],
+      "pds_acc": "PDS000268059.1",
+      "tightest_human_min_same": null
     }
   },
   "pathogen": "Listeria",
-  "pdg_release": "PDG000000001.4781",
+  "pdg_release": "PDG000000001.4783",
   "version": 1,
-  "written_at": "2026-07-07T11:44:56.452092Z"
+  "written_at": "2026-07-08T11:00:00.810811Z"
 }
