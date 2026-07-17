@@ -35714,7 +35714,7 @@
       "pds_acc": "PDS000025300.15",
       "tightest_human_min_same": null
     },
-    "PDS000025311.495": {
+    "PDS000025311.496": {
       "human_pdt_accs": [
         "PDT000025267.3",
         "PDT000045920.1",
@@ -37855,7 +37855,7 @@
         "PDT003268208.1",
         "PDT003282561.1"
       ],
-      "pds_acc": "PDS000025311.495",
+      "pds_acc": "PDS000025311.496",
       "tightest_human_min_same": null
     },
     "PDS000025312.7": {
@@ -39850,7 +39850,7 @@
       "pds_acc": "PDS000025448.9",
       "tightest_human_min_same": null
     },
-    "PDS000025453.40": {
+    "PDS000025453.41": {
       "human_pdt_accs": [
         "PDT000038975.2",
         "PDT000041186.2",
@@ -39873,10 +39873,11 @@
         "PDT001611030.1",
         "PDT001870138.1",
         "PDT002824053.1",
-        "PDT002862151.1"
+        "PDT002862151.1",
+        "PDT003288373.1"
       ],
-      "latest_collection": "2025-09-15",
-      "n_human": 22,
+      "latest_collection": "2026-07-01",
+      "n_human": 23,
       "n_nonhuman": 80,
       "nonhuman_pdt_accs": [
         "PDT000259515.2",
@@ -39960,7 +39961,7 @@
         "PDT002949399.1",
         "PDT002949401.1"
       ],
-      "pds_acc": "PDS000025453.40",
+      "pds_acc": "PDS000025453.41",
       "tightest_human_min_same": null
     },
     "PDS000025454.1": {
@@ -40043,7 +40044,7 @@
       "pds_acc": "PDS000025465.3",
       "tightest_human_min_same": null
     },
-    "PDS000025466.138": {
+    "PDS000025466.139": {
       "human_pdt_accs": [
         "PDT000000032.3",
         "PDT000000884.4",
@@ -40413,7 +40414,7 @@
         "PDT003241291.1",
         "PDT003269848.1"
       ],
-      "pds_acc": "PDS000025466.138",
+      "pds_acc": "PDS000025466.139",
       "tightest_human_min_same": null
     },
     "PDS000025470.16": {
@@ -41766,7 +41767,7 @@
       "pds_acc": "PDS000032939.5",
       "tightest_human_min_same": null
     },
-    "PDS000032941.253": {
+    "PDS000032941.254": {
       "human_pdt_accs": [
         "PDT000000916.4",
         "PDT000000941.3",
@@ -42019,11 +42020,12 @@
         "PDT003242835.1",
         "PDT003242838.1",
         "PDT003248983.1",
-        "PDT003257438.1"
+        "PDT003257438.1",
+        "PDT003288372.1"
       ],
       "latest_collection": "2026-07-01",
-      "n_human": 252,
-      "n_nonhuman": 394,
+      "n_human": 253,
+      "n_nonhuman": 395,
       "nonhuman_pdt_accs": [
         "PDT000000953.4",
         "PDT000040805.3",
@@ -42418,9 +42420,10 @@
         "PDT003263588.1",
         "PDT003263590.1",
         "PDT003263591.1",
-        "PDT003278278.1"
+        "PDT003278278.1",
+        "PDT003288371.1"
       ],
-      "pds_acc": "PDS000032941.253",
+      "pds_acc": "PDS000032941.254",
       "tightest_human_min_same": null
     },
     "PDS000032962.6": {
@@ -44791,7 +44794,7 @@
       "pds_acc": "PDS000039356.7",
       "tightest_human_min_same": null
     },
-    "PDS000039359.19": {
+    "PDS000039359.20": {
       "human_pdt_accs": [
         "PDT000420070.2",
         "PDT000420156.2",
@@ -44809,7 +44812,7 @@
       ],
       "latest_collection": "2024-01-01",
       "n_human": 13,
-      "n_nonhuman": 46,
+      "n_nonhuman": 47,
       "nonhuman_pdt_accs": [
         "PDT000037160.3",
         "PDT000037163.3",
@@ -44856,9 +44859,10 @@
         "PDT001646817.1",
         "PDT001692325.1",
         "PDT002392067.1",
-        "PDT003283628.1"
+        "PDT003283628.1",
+        "PDT003289235.1"
       ],
-      "pds_acc": "PDS000039359.19",
+      "pds_acc": "PDS000039359.20",
       "tightest_human_min_same": null
     },
     "PDS000039360.9": {
@@ -50143,7 +50147,7 @@
       "pds_acc": "PDS000052167.2",
       "tightest_human_min_same": null
     },
-    "PDS000052407.19": {
+    "PDS000052407.20": {
       "human_pdt_accs": [
         "PDT000000716.3",
         "PDT000000920.4",
@@ -50177,7 +50181,7 @@
       ],
       "latest_collection": "2021-01-01",
       "n_human": 29,
-      "n_nonhuman": 33,
+      "n_nonhuman": 35,
       "nonhuman_pdt_accs": [
         "PDT000035345.1",
         "PDT000035354.1",
@@ -50211,9 +50215,11 @@
         "PDT001019016.1",
         "PDT001044043.1",
         "PDT001274793.1",
-        "PDT001274795.1"
+        "PDT001274795.1",
+        "PDT003289246.1",
+        "PDT003289250.1"
       ],
-      "pds_acc": "PDS000052407.19",
+      "pds_acc": "PDS000052407.20",
       "tightest_human_min_same": null
     },
     "PDS000052409.1": {
@@ -86587,7 +86593,7 @@
     }
   },
   "pathogen": "Listeria",
-  "pdg_release": "PDG000000001.4795",
+  "pdg_release": "PDG000000001.4797",
   "version": 1,
-  "written_at": "2026-07-16T10:55:23.532776Z"
+  "written_at": "2026-07-17T10:35:14.053523Z"
 }
